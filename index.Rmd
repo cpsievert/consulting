@@ -74,31 +74,75 @@ div(
     # TODO how to vertically align?
     style = "width: 25%; padding: 1em;",
     h2("Bring your data to life"),
-    h4("We specialize in web interfaces for data exploration, visualization, and presentation. Leverage interactive techniques to pose queries, make comparisons, and find the right view.")
+    h4("We specialize in web interfaces for data exploration and presentation. Leverage interactive techniques to wow your audience, pose queries, make comparisons, and find the right view.")
   ),
   div(style = "width: 75%; padding: 1em", carousel)
 )
 ```
 
 
+## Services
+
+Coming soon
 
 
 ## Clients
 
+```{r}
+div(
+  align="center",
+  h3("Our clients range from startups to government to universities to large firms:")
+)
+```
 
 ```{r}
 div(
   id = "clients",
-  style = "display: flex; flex-wrap: wrap;",
+  style = "display: flex; flex-wrap: wrap; justify-content: center;",
   div(style = "padding: 1em", a(
-    ref = "https://plot.ly/r/", 
+    href = "https://plot.ly/r/", 
+    target = "_blank",
     title = "Plotly",
     img(src = "/img/plotly.png")
   )),
   div(style = "padding: 1em", a(
-    ref = "http://www.bcstats.gov.bc.ca/", 
+    href = "http://www.noaa.gov/", 
+    target = "_blank",
+    title = "NOAA",
+    img(src = "/img/noaa.png")
+  )),
+  div(style = "padding: 1em", a(
+    href = "", 
+    target = "_blank",
+    title = "O'Reilly Media",
+    img(src = "/img/oreilly.png")
+  )),
+  div(style = "padding: 1em", a(
+    href = "http://www.bcstats.gov.bc.ca/", 
+    target = "_blank",
     title = "BC Stats (BC Government)",
     img(src = "/img/bcstats.png")
+  )),
+   div(style = "padding: 1em", a(
+    href = "https://www.helsinki.fi/en", 
+    target = "_blank",
+    title = "University of Helsinki",
+    img(src = "/img/hu.jpg")
+  )),
+  div(style = "padding: 1em", a(
+    href = "http://nycdatascience.com/", 
+    target = "_blank",
+    title = "NYC Data Science",
+    img(src = "/img/nycds.png")
   ))
 )
 ```
+
+
+## Praise
+
+## About 
+
+## Contact
+
+An actual input form? Or a button linking to meeting?

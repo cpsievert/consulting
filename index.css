@@ -23,5 +23,9 @@ h1, h2, h3 {
 
 /* https://stackoverflow.com/questions/24603003/changing-the-maximum-width-of-r-markdown-documents */
 body .main-container {
-  max-width: 100%;
+  max-width: 95%;
+}
+
+#clients img {
+  border-radius: 15px;
 }
