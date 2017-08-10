@@ -3,6 +3,7 @@ output:
   html_document:
     mathjax: null
     toc_float: false
+    self_contained: false
     css: index.css
     includes:
       in_header: header.html
