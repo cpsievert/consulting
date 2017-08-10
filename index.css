@@ -1,0 +1,33 @@
+/*
+Hat tip to Yihui Xie for these great fonts.
+Some of this CSS is inspired by xaringan
+https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/example.css
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+
+body {
+  font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
+  background-color: #272822;
+  color: #d6d6d6;
+  text-shadow: 0 0 20px #333;
+  /* https://getbootstrap.com/components/#navbar-fixed-top */
+  padding-top: 50px;
+}
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+  color: #f3f3f3;
+}
+
+/* https://stackoverflow.com/questions/24603003/changing-the-maximum-width-of-r-markdown-documents */
+body .main-container {
+  max-width: 100%;
+}
+
+/* https://stackoverflow.com/questions/24603003/changing-the-maximum-width-of-r-markdown-documents */
+.navbar-fixed-top {
+  right: 10px;
+}
+

@@ -1,0 +1,67 @@
+---
+output:
+  html_document:
+    mathjax: null
+    toc_float: false
+    css: index.css
+    includes:
+      in_header: header.html
+---
+
+
+<!--html_preserve-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-container">
+
+    <a class="navbar-brand" href="#">SIEVERT CONSULTING</a>
+
+    <ul class="nav navbar-nav navbar-right"> 
+      <li><a href="#Services">Services</a></li>
+      <li><a href="#Clients">Clients</a></li>
+      <li><a href="#Praise">Praise</a></li>
+      <li><a href="#About">About</a></li>
+      <li><a href="#Contact">Contact</a></li>
+    </ul>
+
+  </div>
+</nav>
+<!--/html_preserve-->
+
+```{r, include = FALSE}
+library("htmltools")
+library("bsplus")
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  echo = FALSE
+)
+```
+
+
+```{r explore}
+carousel <- bs_carousel(id = "carousel-landing", use_indicators = TRUE) %>%
+  bs_set_data(interval = FALSE) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/europe.gif"),
+    caption = bs_carousel_caption(
+      body = "Refocus and highlight your graphs"
+    )
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/quakes.gif"),
+    caption = bs_carousel_caption(
+      body = "Exploring relationship between earthquake magnitude and geographic location"
+    )
+  )
+
+div(
+  style = "display: flex; flex-wrap: wrap;",
+  div(
+    style = "width: 25%; height: 50%; padding: 1em; top: 10%",
+    # TODO how to vertically align?
+    h2("Bring your data to life", style = "vertical-align: 20%"),
+    h4("We specialize in web interfaces for data exploration and visualization. Leverage interactive techniques to pose queries, make comparisons, and find the right view.")
+  ),
+  div(style = "width: 75%; padding: 1em", carousel)
+)
+```
