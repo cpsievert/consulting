@@ -25,9 +25,3 @@ h1, h2, h3 {
 body .main-container {
   max-width: 100%;
 }
-
-/* https://stackoverflow.com/questions/24603003/changing-the-maximum-width-of-r-markdown-documents */
-.navbar-fixed-top {
-  right: 10px;
-}
-

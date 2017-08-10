@@ -128,26 +128,40 @@ $(document).ready(function () {
 
 
 
+
+<!--
+https://getbootstrap.com/components/#navbar
+-->
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-container">
+  <div class="container-fluid">
+  
+  <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-list" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">SIEVERT CONSULTING</a>
+    </div>
 
-    <a class="navbar-brand" href="#">SIEVERT CONSULTING</a>
-
-    <ul class="nav navbar-nav navbar-right"> 
-      <li><a href="#Services">Services</a></li>
-      <li><a href="#Clients">Clients</a></li>
-      <li><a href="#Praise">Praise</a></li>
-      <li><a href="#About">About</a></li>
-      <li><a href="#Contact">Contact</a></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbar-list">
+      <ul class="nav navbar-nav navbar-right"> 
+        <li><a href="#Services">Services</a></li>
+        <li><a href="#Clients">Clients</a></li>
+        <li><a href="#Praise">Praise</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul>
+    </div>
 
   </div>
 </nav>
 
 <div style="display: flex; flex-wrap: wrap;">
-<div style="width: 25%; height: 50%; padding: 1em; top: 10%">
-<h2 style="vertical-align: 20%">Bring your data to life</h2>
-<h4>We specialize in web interfaces for data exploration and visualization. Leverage interactive techniques to pose queries, make comparisons, and find the right view.</h4>
+<div style="width: 25%; padding: 1em;">
+<h2>Bring your data to life</h2>
+<h4>We specialize in web interfaces for data exploration, visualization, and presentation. Leverage interactive techniques to pose queries, make comparisons, and find the right view.</h4>
 </div>
 <div style="width: 75%; padding: 1em">
 <div id="carousel-landing" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -178,6 +192,21 @@ $(document).ready(function () {
 <a class="right carousel-control" href="#carousel-landing" role="button" data-slide="next">
 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 <span class="sr-only">Next</span>
+</a>
+</div>
+</div>
+</div>
+<div id="clients" class="section level2">
+<h2>Clients</h2>
+<div id="clients" style="display: flex; flex-wrap: wrap;">
+<div style="padding: 1em">
+<a ref="https://plot.ly/r/" title="Plotly">
+<img src="/img/plotly.png"/>
+</a>
+</div>
+<div style="padding: 1em">
+<a ref="http://www.bcstats.gov.bc.ca/" title="BC Stats (BC Government)">
+<img src="/img/bcstats.png"/>
 </a>
 </div>
 </div>
