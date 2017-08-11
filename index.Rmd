@@ -56,18 +56,43 @@ knitr::opts_chunk$set(
 
 ```{r main}
 # carousel for initial section
-carousel_graphics <- bs_carousel(id = "carousel-o-graphics", use_indicators = TRUE) %>%
+carousel_graphics <- bs_carousel(id = "carousel-o-graphics") %>%
   bs_set_data(interval = FALSE) %>%
   bs_append(
     content = bs_carousel_image(src = "img/europe.gif"),
     caption = bs_carousel_caption(
-      body = "Refocus and highlight your graphs"
+      "Figure 1: Zooming, hovering, and highlighting on a population map of Europe."
     )
   ) %>%
   bs_append(
+    content = bs_carousel_image(src = "img/zikar-colombia.gif"),
+    caption = bs_carousel_caption(
+      "Figure 2: Comparing overall frequency of Zika virus cases (black) versus frequency within the map (red)."
+    )
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/pedestrians-missing.gif"),
+    caption = bs_carousel_caption(
+      "Figure 3: Comparing foot traffic in various train stations among those with highest number of missing values."
+    )
+  ) %>%
+  # TODO: make a better version!
+  # bs_append(
+  #   content = bs_carousel_image(src = "img/pedestrians-entropy.gif"),
+  #   caption = bs_carousel_caption(
+  #     "Figure 3b: Comparing foot traffic in train stations with low entropy (red) versus high entropy (blue)."
+  #   )
+  # ) %>%
+  bs_append(
     content = bs_carousel_image(src = "img/quakes.gif"),
     caption = bs_carousel_caption(
-      body = "Exploring relationship between earthquake magnitude and geographic location"
+      "Figure 4: Exploring relationship between earthquake magnitude and geographic location"
+    )
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/tour.gif"),
+    caption = bs_carousel_caption(
+      "Figure 5: Choosing 3 groups of 'similar' US states (via Euclidean distance of arrest data). The rotating graph (aka, a grand tour) cycles through 2D projections of the data -- allowing us to assess how the clustering appears from many different perspectives."
     )
   )
 
@@ -91,7 +116,7 @@ service_box <- div(
   style = "display: flex; flex-wrap: wrap; justify-content: center;",
   div(
     icons(c("terminal", "user")), 
-    h4(a(href = "https://cran.r-project.org/", "R"),  " & ", a(href = "https://www.rstudio.com", "RStudio"), "development, support, and training")
+    h4(a(href = "https://cran.r-project.org/", target = "_blank", "R"),  " & ", a(href = "https://www.rstudio.com", target = "_blank", "RStudio"), "development, support, and ", a(href="https://cpsievert.me/workshopz/", target = "_blank", "workshops"))
   ),
   div(
     icons(c("server", "desktop")), 
@@ -176,13 +201,13 @@ client_images <- div(
 # (1) how to vertically align?
 # (2) cssify the padding?
 content <- div(
-  style = "display: flex; flex-wrap: wrap",
+  style = "display: flex; flex-wrap: wrap;",
   div(
-    style = "width: 25%; padding: 1em;",
+    style = "width: 25%; padding: 1em; height: 625px",
     h1("Breathing life into data"),
     h4("At Sievert Consulting, we turn data into insight. Our expertise is in interactive data visualization, but offer a wide variety of services surrounding the practice, infrastructure, and dissemination of data science.")
   ),
-  div(style = "width: 75%; padding: 1em", carousel_graphics),
+  div(style = "width: 75%; padding: 1em; height: 625px", carousel_graphics),
   div(
     id = "Services",
     style = "width: 100%; padding: 1em",
@@ -213,7 +238,8 @@ content <- div(
     h1("Gallery"),
     div(
       align = "center",
-      h3("A gallery of examples of what can deliver at Sievert Consulting.")
+      h3("A gallery of examples of what can deliver at Sievert Consulting."),
+      "Coming soon"
     )
   ),
   div(
@@ -222,8 +248,12 @@ content <- div(
     h1("About"),
     div(
       style = "display: flex; flex-wrap: wrap; justify-content: center;",
-      div(style = "width: 30%; padding: 1em", img(src = "img/carson.jpg")),
-      div(style = "width: 70%; padding: 1em", includeMarkdown("about.md"))
+      div(style = "width: 25%; padding: 1em", img(src = "img/carson.jpg")),
+      div(
+        style = "width: 75%; padding: 1em", 
+        h3(style = "text-align: left", "Carson Sievert, PhD. Founder and Principal Consultant"),
+        h4(includeMarkdown("about.md"))
+      )
     )
   ),
   div(
@@ -272,7 +302,7 @@ Flip carousel after the initial graphic has had time to play twice
 ```{js}
 setTimeout(function() {
   $('#carousel-o-graphics').carousel('next')
-}, 10000)
+}, 15000)
 ```
 
 
@@ -281,7 +311,5 @@ tags$footer(
   div(
     "Copyright 2017 Sievert Consulting"
   )
-  
 )
-
 ```

@@ -145,30 +145,47 @@ https://getbootstrap.com/components/#navbar
   </div>
 </nav>
 
-<div style="display: flex; flex-wrap: wrap">
-<div style="width: 25%; padding: 1em;">
+<div style="display: flex; flex-wrap: wrap;">
+<div style="width: 25%; padding: 1em; height: 625px">
 <h1>Breathing life into data</h1>
 <h4>At Sievert Consulting, we turn data into insight. Our expertise is in interactive data visualization, but offer a wide variety of services surrounding the practice, infrastructure, and dissemination of data science.</h4>
 </div>
-<div style="width: 75%; padding: 1em">
+<div style="width: 75%; padding: 1em; height: 625px">
 <div id="carousel-o-graphics" class="carousel slide" data-ride="carousel" data-interval="false">
-<ol class="carousel-indicators">
-<li data-target="#carousel-o-graphics" data-slide-to="0" class="active"></li>
-<li data-target="#carousel-o-graphics" data-slide-to="1"></li>
-</ol>
 <div class="carousel-inner" role="listbox">
 <div class="item active">
 <img src="img/europe.gif" class="img-responsive center-block"/>
 <div class="carousel-caption">
-<h3></h3>
-<p>Refocus and highlight your graphs</p>
+<h3>Figure 1: Zooming, hovering, and highlighting on a population map of Europe.</h3>
+<p></p>
+</div>
+</div>
+<div class="item">
+<img src="img/zikar-colombia.gif" class="img-responsive center-block"/>
+<div class="carousel-caption">
+<h3>Figure 2: Comparing overall frequency of Zika virus cases (black) versus frequency within the map (red).</h3>
+<p></p>
+</div>
+</div>
+<div class="item">
+<img src="img/pedestrians-missing.gif" class="img-responsive center-block"/>
+<div class="carousel-caption">
+<h3>Figure 3: Comparing foot traffic in various train stations among those with highest number of missing values.</h3>
+<p></p>
 </div>
 </div>
 <div class="item">
 <img src="img/quakes.gif" class="img-responsive center-block"/>
 <div class="carousel-caption">
-<h3></h3>
-<p>Exploring relationship between earthquake magnitude and geographic location</p>
+<h3>Figure 4: Exploring relationship between earthquake magnitude and geographic location</h3>
+<p></p>
+</div>
+</div>
+<div class="item">
+<img src="img/tour.gif" class="img-responsive center-block"/>
+<div class="carousel-caption">
+<h3>Figure 5: Choosing 3 groups of 'similar' US states (via Euclidean distance of arrest data). The rotating graph (aka, a grand tour) cycles through 2D projections of the data -- allowing us to assess how the clustering appears from many different perspectives.</h3>
+<p></p>
 </div>
 </div>
 </div>
@@ -194,10 +211,11 @@ https://getbootstrap.com/components/#navbar
 <i class="fa fa-user fa-fw fa-3x" aria-hidden="true"></i>
 </div>
 <h4>
-<a href="https://cran.r-project.org/">R</a>
+<a href="https://cran.r-project.org/" target="_blank">R</a>
  &amp; 
-<a href="https://www.rstudio.com">RStudio</a>
-development, support, and training
+<a href="https://www.rstudio.com" target="_blank">RStudio</a>
+development, support, and 
+<a href="https://cpsievert.me/workshopz/" target="_blank">workshops</a>
 </h4>
 </div>
 <div>
@@ -318,17 +336,19 @@ development, support, and training
 <h1>Gallery</h1>
 <div align="center">
 <h3>A gallery of examples of what can deliver at Sievert Consulting.</h3>
+Coming soon
 </div>
 </div>
 <div id="About" style="width: 100%; padding: 1em">
 <h1>About</h1>
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-<div style="width: 30%; padding: 1em">
+<div style="width: 25%; padding: 1em">
 <img src="img/carson.jpg"/>
 </div>
-<div style="width: 70%; padding: 1em"><h4>Dr. Carson Sievert, Founder and Principal Consultant</h4>
-
-<p><a href="https://cpsievert.me">Carson</a> enjoys developing software and creating products that make data analysis more accessible and less boring. For example, his <a href="https://github.com/ropensci/plotly/graphs/contributors">contributions to plotly</a> have made advanced interactive web graphics accessible to R users. Those contributions also earned him the 2017 <a href="http://stat-computing.org/awards/jmc/">John Chambers Statistical Software Award</a>. Carson has over 5 years experience developing data science software, as well as formal training in traditional statistical methods &ndash; allowing him to attack challenging problems with domain expertise from many different areas. Whether it&#39;s a novel visualization for better model interpretation (<a href="https://github.com/cpsievert/LDAvis">LDAvis</a>), or a customized (shiny) web-application for exploring multiple datasets (e.g., <a href="https://github.com/cpsievert/zikar">zikar</a>, <a href="https://github.com/cpsievert/pedestrians">pedestrians</a>, <a href="https://github.com/ropenscilabs/eechidna/">eechidna</a>, <a href="https://github.com/cpsievert/bcviz">bcviz</a>); Carson pushes the frontier of R and JavaScript to help (himself and others) derive insight from data in a reusable, portable, reproducible, and accessible way.</p>
+<div style="width: 75%; padding: 1em">
+<h3 style="text-align: left">Carson Sievert, PhD. Founder and Principal Consultant</h3>
+<h4><p><a href="https://cpsievert.me">Carson</a> enjoys developing software and creating products that make data analysis more accessible and less boring. He is most well-known as the maintainer of <a href="https://github.com/ropensci/plotly/graphs/contributors">plotly</a> &ndash; most widely used R package for creating interactive web graphics. His work on plotly was also recognized with the <a href="http://stat-computing.org/awards/jmc/">John Chambers Statistical Software Award</a> in 2017, just after receiving his PhD in statistics. Carson has over 5 years experience developing data science software, as well as formal training in traditional statistical methods &ndash; allowing him to attack challenging problems with domain expertise from many different areas. Whether it&#39;s a novel visualization for better model interpretation (<a href="https://github.com/cpsievert/LDAvis">LDAvis</a>), or a customized (shiny) web-application for exploring multiple datasets (e.g., <a href="https://github.com/cpsievert/zikar">zikar</a>, <a href="https://github.com/cpsievert/pedestrians">pedestrians</a>, <a href="https://github.com/ropenscilabs/eechidna/">eechidna</a>, <a href="https://github.com/cpsievert/bcviz">bcviz</a>); Carson pushes the frontier of R and JavaScript to help (himself and others) derive insight from data in a reusable, portable, reproducible, and accessible way.</p>
+</h4>
 </div>
 </div>
 </div>
@@ -360,7 +380,7 @@ Flip carousel after the initial graphic has had time to play twice
 <script type="text/javascript">
 setTimeout(function() {
   $('#carousel-o-graphics').carousel('next')
-}, 10000)
+}, 15000)
 </script>
 <footer>
 <div>Copyright 2017 Sievert Consulting</div>

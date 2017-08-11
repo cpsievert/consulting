@@ -50,10 +50,15 @@ body .main-container{
 
 #About img {
   border-radius: 15px;
-  margin-top: 3em;
+  margin-top: 1em;
 }
-
 
 #contact-buttons {
   color: black;
+}
+
+.carousel-caption {
+  position:relative;
+  left:auto;
+  right:auto;
 }
