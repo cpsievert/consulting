@@ -20,8 +20,6 @@
 <script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="index_files/navigation-1.1/tabsets.js"></script>
-<link href="index_files/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="index_files/highlightjs-1.1/highlight.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <title> Sievert Consulting LLC </title>
@@ -30,19 +28,6 @@
 <meta name="keywords" content="r,rstats,rstudio,statistics,machine learning,data visualization,graphs,graphics,plotly,r plotly,r shiny,shiny apps,r shiny apps,shiny developer,r shiny developer">
 <!-- TODO: open graph http://ogp.me/ -->
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
-<script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
-}
-</script>
 
 
 
@@ -73,7 +58,8 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="index.css" type="text/css" />
+<link rel="stylesheet" href="css/index.css" type="text/css" />
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
 
 </head>
 
@@ -135,7 +121,7 @@ https://getbootstrap.com/components/#navbar
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
   
-  <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-list" aria-expanded="false">
         <span class="icon-bar"></span>
@@ -150,6 +136,7 @@ https://getbootstrap.com/components/#navbar
         <li><a href="#Services">Services</a></li>
         <li><a href="#Clients">Clients</a></li>
         <li><a href="#Praise">Praise</a></li>
+        <li><a href="#Gallery">Gallery</a></li>
         <li><a href="#About">About</a></li>
         <li><a href="#Contact">Contact</a></li>
       </ul>
@@ -158,10 +145,10 @@ https://getbootstrap.com/components/#navbar
   </div>
 </nav>
 
-<div style="display: flex; flex-wrap: wrap; height: 100%">
+<div style="display: flex; flex-wrap: wrap">
 <div style="width: 25%; padding: 1em;">
 <h1>Breathing life into data</h1>
-<h4>At Sievert Consulting, we turn data into insight. We specialize in interactive data visualization, but offer a wide variety of services surrounding the practice, infrastructure, and dissemination of data science.</h4>
+<h4>At Sievert Consulting, we turn data into insight. Our expertise is in interactive data visualization, but offer a wide variety of services surrounding the practice, infrastructure, and dissemination of data science.</h4>
 </div>
 <div style="width: 75%; padding: 1em">
 <div id="carousel-o-graphics" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -197,7 +184,64 @@ https://getbootstrap.com/components/#navbar
 </div>
 <div id="Services" style="width: 100%; padding: 1em">
 <h1>Services</h1>
-Coming soon
+<div align="center">
+<h3>Our services are structured around cutting-edge free and open-source software for data science</h3>
+</div>
+<div id="service-box" style="display: flex; flex-wrap: wrap; justify-content: center;">
+<div>
+<div style="display: inline">
+<i class="fa fa-terminal fa-fw fa-3x" aria-hidden="true"></i>
+<i class="fa fa-user fa-fw fa-3x" aria-hidden="true"></i>
+</div>
+<h4>
+<a href="https://cran.r-project.org/">R</a>
+ &amp; 
+<a href="https://www.rstudio.com">RStudio</a>
+development, support, and training
+</h4>
+</div>
+<div>
+<div style="display: inline">
+<i class="fa fa-server fa-fw fa-3x" aria-hidden="true"></i>
+<i class="fa fa-desktop fa-fw fa-3x" aria-hidden="true"></i>
+</div>
+<h4>
+<a href="https://shiny.rstudio.com/" target="_blank">Shiny</a>
+ app development and support
+</h4>
+</div>
+<div>
+<div style="display: inline">
+<i class="fa fa-line-chart fa-fw fa-3x" aria-hidden="true"></i>
+<i class="fa fa-bar-chart fa-fw fa-3x" aria-hidden="true"></i>
+<i class="fa fa-mouse-pointer fa-fw fa-3x" aria-hidden="true"></i>
+</div>
+<h4>Interactive dashboards that support data analysis tasks</h4>
+</div>
+<div>
+<div style="display: inline">
+<i class="fa fa-question-circle fa-fw fa-3x" aria-hidden="true"></i>
+<i class="fa fa-info-circle fa-fw fa-3x" aria-hidden="true"></i>
+</div>
+<h4>Statistical consulting</h4>
+</div>
+<div>
+<div style="display: inline">
+<i class="fa fa-file-code-o fa-fw fa-3x" aria-hidden="true"></i>
+<i class="fa fa-html5 fa-fw fa-3x" aria-hidden="true"></i>
+<i class="fa fa-file-pdf-o fa-fw fa-3x" aria-hidden="true"></i>
+<i class="fa fa-file-word-o fa-fw fa-3x" aria-hidden="true"></i>
+</div>
+<h4>Dynamic &amp; reproducible reporting of analytical results</h4>
+</div>
+<div>
+<div style="display: inline">
+<i class="fa fa-database fa-fw fa-3x" aria-hidden="true"></i>
+<i class="fa fa-table fa-fw fa-3x" aria-hidden="true"></i>
+</div>
+<h4>Data acquistion, cleaning, management</h4>
+</div>
+</div>
 </div>
 <div id="Clients" style="width: 100%; padding: 1em">
 <h1>Clients</h1>
@@ -235,6 +279,11 @@ Coming soon
 <img src="/img/nycds.png"/>
 </a>
 </div>
+<div style="padding: 1em">
+<a href="http://www.uga.edu/" target="_blank" title="University of Georgia">
+<img src="/img/uga.png"/>
+</a>
+</div>
 </div>
 </div>
 <div id="Praise" style="width: 100%; padding: 1em">
@@ -265,13 +314,38 @@ Coming soon
 </a>
 </div>
 </div>
+<div id="Gallery" style="width: 100%; padding: 1em">
+<h1>Gallery</h1>
+<div align="center">
+<h3>A gallery of examples of what can deliver at Sievert Consulting.</h3>
 </div>
-<div id="about" class="section level2">
-<h2>About</h2>
 </div>
-<div id="contact" class="section level2">
-<h2>Contact</h2>
-<p>An actual input form? Or a button linking to meeting?</p>
+<div id="About" style="width: 100%; padding: 1em">
+<h1>About</h1>
+A more thorough description?
+</div>
+<div id="Contact" style="width: 100%; padding: 1em">
+<h1>Contact</h1>
+<div id="contact-buttons" style="display: flex; flex-wrap: wrap; justify-content: center;">
+<div style="padding: 3em">
+<a href="https://carsonsievert.typeform.com/to/FGtIgd" target="_blank">
+<button type="button" class="btn btn-secondary btn-lg">
+<i class="fa fa-envelope fa-fw fa-2x" aria-hidden="true"></i>
+<h4>Drop us a note</h4>
+</button>
+</a>
+</div>
+<div style="padding: 3em">
+<a href="https://calendly.com/cpsievert/meeting" target="_blank">
+<button type="button" class="btn btn-secondary btn-lg">
+<i class="fa fa-calendar fa-fw fa-2x" aria-hidden="true"></i>
+<h4>Schedule a meeting</h4>
+</button>
+</a>
+</div>
+</div>
+</div>
+</div>
 <!--
 Flip carousel after the initial graphic has had time to play twice
 -->
@@ -280,7 +354,9 @@ setTimeout(function() {
   $('#carousel-o-graphics').carousel('next')
 }, 10000)
 </script>
-</div>
+<footer>
+<div>Copyright 2017 Sievert Consulting</div>
+</footer>
 
 
 

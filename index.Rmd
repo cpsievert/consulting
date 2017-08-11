@@ -1,10 +1,11 @@
 ---
 output:
   html_document:
+    highlight: null
     mathjax: null
     toc_float: false
     self_contained: false
-    css: index.css
+    css: ['css/index.css', 'css/font-awesome.min.css']
     includes:
       in_header: header.html
 ---
@@ -17,7 +18,7 @@ https://getbootstrap.com/components/#navbar
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
   
-  <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-list" aria-expanded="false">
         <span class="icon-bar"></span>
@@ -32,6 +33,7 @@ https://getbootstrap.com/components/#navbar
         <li><a href="#Services">Services</a></li>
         <li><a href="#Clients">Clients</a></li>
         <li><a href="#Praise">Praise</a></li>
+        <li><a href="#Gallery">Gallery</a></li>
         <li><a href="#About">About</a></li>
         <li><a href="#Contact">Contact</a></li>
       </ul>
@@ -52,7 +54,8 @@ knitr::opts_chunk$set(
 ```
 
 
-```{r explore}
+```{r main}
+# carousel for initial section
 carousel_graphics <- bs_carousel(id = "carousel-o-graphics", use_indicators = TRUE) %>%
   bs_set_data(interval = FALSE) %>%
   bs_append(
@@ -68,6 +71,51 @@ carousel_graphics <- bs_carousel(id = "carousel-o-graphics", use_indicators = TR
     )
   )
 
+
+# reusable function for fontawesome icons
+icons <- function(names = "terminal") {
+  icon_list <- list()
+  for (i in seq_along(names)) {
+    icon_list[[i]] <- htmltools::tags$i(
+      class = sprintf("fa fa-%s fa-fw fa-3x", names[[i]]),
+      `aria-hidden` = "true"
+    )
+  }
+  htmltools::tags$div(style = "display: inline", icon_list)
+}
+
+
+# flexbox for service content/fontawesome icons
+service_box <- div(
+  id = "service-box",
+  style = "display: flex; flex-wrap: wrap; justify-content: center;",
+  div(
+    icons(c("terminal", "user")), 
+    h4(a(href = "https://cran.r-project.org/", "R"),  " & ", a(href = "https://www.rstudio.com", "RStudio"), "development, support, and training")
+  ),
+  div(
+    icons(c("server", "desktop")), 
+    h4(a(href = "https://shiny.rstudio.com/", target = "_blank", "Shiny"), " app development and support")
+  ),
+  div(
+    icons(c("line-chart", "bar-chart", "mouse-pointer")),
+    h4("Interactive dashboards that support data analysis tasks")
+  ),
+  div(
+    icons(c("question-circle", "info-circle")),
+    h4("Statistical consulting")
+  ),
+  div(
+    icons(c("file-code-o", "html5", "file-pdf-o", "file-word-o")),
+    h4("Dynamic & reproducible reporting of analytical results")
+  ),
+  div(
+    icons(c("database", "table")),
+    h4("Data acquistion, cleaning, management")
+  )
+)
+
+# carousel for praise section
 carousel_praise <- bs_carousel(id = "carousel-o-praise", use_indicators = TRUE) %>%
   bs_append(
     content = bs_carousel_image(src = "img/roy.svg")
@@ -76,7 +124,7 @@ carousel_praise <- bs_carousel(id = "carousel-o-praise", use_indicators = TRUE) 
     content = bs_carousel_image(src = "img/joseph.svg")
   )
 
-
+# flexbox of client images
 client_images <- div(
   id = "clients",
   style = "display: flex; flex-wrap: wrap; justify-content: center;",
@@ -115,35 +163,38 @@ client_images <- div(
     target = "_blank",
     title = "NYC Data Science",
     img(src = "/img/nycds.png")
+  )),
+  div(style = "padding: 1em", a(
+    href = "http://www.uga.edu/", 
+    target = "_blank",
+    title = "University of Georgia",
+    img(src = "/img/uga.png")
   ))
 )
 
 # TODO: 
 # (1) how to vertically align?
 # (2) cssify the padding?
-div(
-  style = "display: flex; flex-wrap: wrap; height: 100%",
+content <- div(
+  style = "display: flex; flex-wrap: wrap",
   div(
-    
     style = "width: 25%; padding: 1em;",
     h1("Breathing life into data"),
-    h4("At Sievert Consulting, we turn data into insight. We specialize in interactive data visualization, but offer a wide variety of services surrounding the practice, infrastructure, and dissemination of data science.")
+    h4("At Sievert Consulting, we turn data into insight. Our expertise is in interactive data visualization, but offer a wide variety of services surrounding the practice, infrastructure, and dissemination of data science.")
   ),
   div(style = "width: 75%; padding: 1em", carousel_graphics),
   div(
     id = "Services",
     style = "width: 100%; padding: 1em",
-    h1("Services"),
-    "Coming soon"
+    h1("Services"), 
+    div(align = "center", h3("Our services are structured around cutting-edge free and open-source software for data science")),
+    service_box
   ),
   div(
     id = "Clients",
     style = "width: 100%; padding: 1em",
     h1("Clients"),
-    div(
-      align = "center",
-      h3("Our clients range from startups to government to universities to large firms:")
-    ),
+    div(align = "center", h3("Our clients range from startups to government to universities to large firms:")),
     client_images
   ),
   div(
@@ -155,17 +206,59 @@ div(
       h3("Some nice things our clients, end-users, and audience members have said:")
     ),
     carousel_praise
+  ),
+  div(
+    id = "Gallery",
+    style = "width: 100%; padding: 1em",
+    h1("Gallery"),
+    div(
+      align = "center",
+      h3("A gallery of examples of what can deliver at Sievert Consulting.")
+    )
+  ),
+  div(
+    id = "About",
+    style = "width: 100%; padding: 1em",
+    h1("About"),
+    "A more thorough description?"
+  ),
+  div(
+    id = "Contact",
+    style = "width: 100%; padding: 1em",
+    h1("Contact"),
+    div(
+      id = "contact-buttons",
+      style = "display: flex; flex-wrap: wrap; justify-content: center;", 
+      div(
+        style = "padding: 3em",
+        a(
+          href = "https://carsonsievert.typeform.com/to/FGtIgd",
+          target = "_blank",
+          tags$button(
+            type = "button", class = "btn btn-secondary btn-lg", 
+            htmltools::tags$i(class = "fa fa-envelope fa-fw fa-2x", `aria-hidden`="true"),
+            h4("Drop us a note")
+          )
+        )
+      ),
+      div(
+        style = "padding: 3em",
+        a(
+          href = "https://calendly.com/cpsievert/meeting",
+          target = "_blank",
+          tags$button(
+            type = "button", class = "btn btn-secondary btn-lg", 
+            htmltools::tags$i(class = "fa fa-calendar fa-fw fa-2x", `aria-hidden`="true"),
+            h4("Schedule a meeting")
+          )
+        )
+      )
+    )
   )
 )
 
+content
 ```
-
-
-## About 
-
-## Contact
-
-An actual input form? Or a button linking to meeting?
 
 
 <!--
@@ -176,4 +269,15 @@ Flip carousel after the initial graphic has had time to play twice
 setTimeout(function() {
   $('#carousel-o-graphics').carousel('next')
 }, 10000)
+```
+
+
+```{r footer}
+tags$footer(
+  div(
+    "Copyright 2017 Sievert Consulting"
+  )
+  
+)
+
 ```

@@ -26,6 +26,11 @@ body .main-container{
   max-width: 95%;
 }
 
+#service-box div {
+  width: 33%;
+  padding: 1em;
+  text-align: center;
+}
 
 /* https://codepen.io/tutsplus/pen/dNPReW */
 #clients a:hover img {
@@ -43,23 +48,6 @@ body .main-container{
 }
 
 
-.full-width {
-    width: 100%;
-}
-
-#carousel-o-praise .carousel-caption h3{
+#contact-buttons {
   color: black;
-  position: absolute;
-  top: 0;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  height: 100%;
 }
