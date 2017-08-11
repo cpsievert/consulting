@@ -53,7 +53,7 @@ knitr::opts_chunk$set(
 
 
 ```{r explore}
-carousel <- bs_carousel(id = "carousel-landing", use_indicators = TRUE) %>%
+carousel_graphics <- bs_carousel(id = "carousel-o-graphics", use_indicators = TRUE) %>%
   bs_set_data(interval = FALSE) %>%
   bs_append(
     content = bs_carousel_image(src = "img/europe.gif"),
@@ -66,6 +66,14 @@ carousel <- bs_carousel(id = "carousel-landing", use_indicators = TRUE) %>%
     caption = bs_carousel_caption(
       body = "Exploring relationship between earthquake magnitude and geographic location"
     )
+  )
+
+carousel_praise <- bs_carousel(id = "carousel-o-praise", use_indicators = TRUE) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/roy.svg")
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/joseph.svg")
   )
 
 
@@ -121,7 +129,7 @@ div(
     h1("Breathing life into data"),
     h4("At Sievert Consulting, we turn data into insight. We specialize in interactive data visualization, but offer a wide variety of services surrounding the practice, infrastructure, and dissemination of data science.")
   ),
-  div(style = "width: 75%; padding: 1em", carousel),
+  div(style = "width: 75%; padding: 1em", carousel_graphics),
   div(
     id = "Services",
     style = "width: 100%; padding: 1em",
@@ -146,9 +154,10 @@ div(
       align = "center",
       h3("Some nice things our clients, end-users, and audience members have said:")
     ),
-    "A nice quote"
+    carousel_praise
   )
 )
+
 ```
 
 
@@ -157,3 +166,14 @@ div(
 ## Contact
 
 An actual input form? Or a button linking to meeting?
+
+
+<!--
+Flip carousel after the initial graphic has had time to play twice
+-->
+
+```{js}
+setTimeout(function() {
+  $('#carousel-o-graphics').carousel('next')
+}, 10000)
+```
