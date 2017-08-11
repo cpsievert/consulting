@@ -61,4 +61,5 @@ body .main-container{
   position:relative;
   left:auto;
   right:auto;
+  padding-bottom:0;
 }

@@ -232,16 +232,16 @@ content <- div(
     ),
     carousel_praise
   ),
-  div(
-    id = "Gallery",
-    style = "width: 100%; padding: 1em",
-    h1("Gallery"),
-    div(
-      align = "center",
-      h3("A gallery of examples of what can deliver at Sievert Consulting."),
-      "Coming soon"
-    )
-  ),
+  # div(
+  #   id = "Gallery",
+  #   style = "width: 100%; padding: 1em",
+  #   h1("Gallery"),
+  #   div(
+  #     align = "center",
+  #     h3("A gallery of Sievert Consulting examples."),
+  #     "Coming soon"
+  #   )
+  # ),
   div(
     id = "About",
     style = "width: 100%; padding: 1em",
