@@ -68,35 +68,8 @@ carousel <- bs_carousel(id = "carousel-landing", use_indicators = TRUE) %>%
     )
   )
 
-div(
-  style = "display: flex; flex-wrap: wrap; height: 100%",
-  div(
-    # TODO how to vertically align?
-    style = "width: 25%; padding: 1em;",
-    h2("Breathing life into data"),
-    h4("At Sievert Consulting, we turn data into insight, and have expertise on creating interactive web graphics for both exploration and presentation.")
-  ),
-  div(style = "width: 75%; padding: 1em", carousel)
-)
-```
 
-
-## Services
-
-Coming soon
-
-
-## Clients
-
-```{r}
-div(
-  align="center",
-  h3("Our clients range from startups to government to universities to large firms:")
-)
-```
-
-```{r}
-div(
+client_images <- div(
   id = "clients",
   style = "display: flex; flex-wrap: wrap; justify-content: center;",
   div(style = "padding: 1em", a(
@@ -136,10 +109,48 @@ div(
     img(src = "/img/nycds.png")
   ))
 )
+
+# TODO: 
+# (1) how to vertically align?
+# (2) cssify the padding?
+div(
+  style = "display: flex; flex-wrap: wrap; height: 100%",
+  div(
+    
+    style = "width: 25%; padding: 1em;",
+    h1("Breathing life into data"),
+    h4("At Sievert Consulting, we turn data into insight. We specialize in interactive data visualization, but offer a wide variety of services surrounding the practice, infrastructure, and dissemination of data science.")
+  ),
+  div(style = "width: 75%; padding: 1em", carousel),
+  div(
+    id = "Services",
+    style = "width: 100%; padding: 1em",
+    h1("Services"),
+    "Coming soon"
+  ),
+  div(
+    id = "Clients",
+    style = "width: 100%; padding: 1em",
+    h1("Clients"),
+    div(
+      align = "center",
+      h3("Our clients range from startups to government to universities to large firms:")
+    ),
+    client_images
+  ),
+  div(
+    id = "Praise",
+    style = "width: 100%; padding: 1em",
+    h1("Praise"),
+    div(
+      align = "center",
+      h3("Some nice things our clients, end-users, and audience members have said:")
+    ),
+    "A nice quote"
+  )
+)
 ```
 
-
-## Praise
 
 ## About 
 

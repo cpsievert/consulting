@@ -7,7 +7,7 @@ https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/
 @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
 
-body {
+body{
   font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
   background-color: #272822;
   color: #d6d6d6;
@@ -15,17 +15,29 @@ body {
   /* https://getbootstrap.com/components/#navbar-fixed-top */
   padding-top: 50px;
 }
-h1, h2, h3 {
+h1, h2, h3{
   font-family: 'Yanone Kaffeesatz';
   font-weight: normal;
   color: #f3f3f3;
 }
 
 /* https://stackoverflow.com/questions/24603003/changing-the-maximum-width-of-r-markdown-documents */
-body .main-container {
+body .main-container{
   max-width: 95%;
 }
 
-#clients img {
+
+/* https://codepen.io/tutsplus/pen/dNPReW */
+#clients a:hover img {
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  z-index:5;
+}
+
+#clients img{
   border-radius: 15px;
 }
