@@ -19,6 +19,7 @@ h1, h2, h3{
   font-family: 'Yanone Kaffeesatz';
   font-weight: normal;
   color: #f3f3f3;
+  text-align: center;
 }
 
 /* https://stackoverflow.com/questions/24603003/changing-the-maximum-width-of-r-markdown-documents */
@@ -43,8 +44,13 @@ body .main-container{
   z-index:5;
 }
 
-#clients img{
+#clients img, #About img {
   border-radius: 15px;
+}
+
+#About img {
+  border-radius: 15px;
+  margin-top: 3em;
 }
 
 

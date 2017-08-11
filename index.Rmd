@@ -220,7 +220,11 @@ content <- div(
     id = "About",
     style = "width: 100%; padding: 1em",
     h1("About"),
-    "A more thorough description?"
+    div(
+      style = "display: flex; flex-wrap: wrap; justify-content: center;",
+      div(style = "width: 30%; padding: 1em", img(src = "img/carson.jpg")),
+      div(style = "width: 70%; padding: 1em", includeMarkdown("about.md"))
+    )
   ),
   div(
     id = "Contact",
@@ -230,7 +234,7 @@ content <- div(
       id = "contact-buttons",
       style = "display: flex; flex-wrap: wrap; justify-content: center;", 
       div(
-        style = "padding: 3em",
+        style = "margin-right: 15px",
         a(
           href = "https://carsonsievert.typeform.com/to/FGtIgd",
           target = "_blank",
@@ -242,7 +246,7 @@ content <- div(
         )
       ),
       div(
-        style = "padding: 3em",
+        style = "margin-left: 15px",
         a(
           href = "https://calendly.com/cpsievert/meeting",
           target = "_blank",
