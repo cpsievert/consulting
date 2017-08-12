@@ -219,7 +219,7 @@ content <- div(
     id = "Clients",
     style = "width: 100%; padding: 1em",
     h1("Clients"),
-    div(align = "center", h3("Our clients range from startups to government to universities to large firms:")),
+    div(align = "center", h3("Our clients include: startups, government, universities, and corporations")),
     client_images
   ),
   div(
