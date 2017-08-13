@@ -24,17 +24,56 @@ h1, h2, h3{
 
 /* https://stackoverflow.com/questions/24603003/changing-the-maximum-width-of-r-markdown-documents */
 body .main-container{
-  max-width: 95%;
+  max-width: 100%;
 }
 
+/* place caption in opening carousel below the images */
+.carousel-caption {
+  position:relative;
+  left:auto;
+  right:auto;
+  padding-bottom:0;
+}
+
+/* three services per line (by default) */
 #service-box div {
-  width: 33%;
+  width: 50%;
   padding: 1em;
   text-align: center;
 }
 
-/* https://codepen.io/tutsplus/pen/dNPReW */
+#about-pic {
+  width: 30%;
+  margin:auto;
+  padding: 1em;
+}
+
+#about-txt {
+  width: 70%;
+  padding: 1em;
+}
+
+/* TODO: if width is less than 700, content  */
+@media screen and (max-width: 700px) {
+  #service-box div {
+    width: 100%;
+  }
+  #about-box div {
+    width: 100%;
+  }
+}
+
+/*
+  Make client logos pop on hover
+  https://codepen.io/tutsplus/pen/dNPReW
+*/
+#clients img {
+  border-radius: 15px;
+  filter: grayscale(100%);
+}
+
 #clients a:hover img {
+  filter: none;
   box-shadow:10px 10px 7px rgba(0,0,0,.7);
   -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
   -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
@@ -44,10 +83,6 @@ body .main-container{
   z-index:5;
 }
 
-#clients img, #About img {
-  border-radius: 15px;
-}
-
 #About img {
   border-radius: 15px;
   margin-top: 1em;
@@ -55,11 +90,4 @@ body .main-container{
 
 #contact-buttons {
   color: black;
-}
-
-.carousel-caption {
-  position:relative;
-  left:auto;
-  right:auto;
-  padding-bottom:0;
 }

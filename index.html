@@ -135,8 +135,6 @@ https://getbootstrap.com/components/#navbar
       <ul class="nav navbar-nav navbar-right"> 
         <li><a href="#Services">Services</a></li>
         <li><a href="#Clients">Clients</a></li>
-        <li><a href="#Praise">Praise</a></li>
-        <li><a href="#Gallery">Gallery</a></li>
         <li><a href="#About">About</a></li>
         <li><a href="#Contact">Contact</a></li>
       </ul>
@@ -145,12 +143,10 @@ https://getbootstrap.com/components/#navbar
   </div>
 </nav>
 
-<div style="display: flex; flex-wrap: wrap;">
-<div style="width: 25%; padding: 1em; height: 625px">
+<div id="Breathing life into data" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
 <h1>Breathing life into data</h1>
-<h4>At Sievert Consulting, we turn data into insight. Our expertise is in interactive data visualization, but offer a wide variety of services surrounding the practice, infrastructure, and dissemination of data science.</h4>
+<h3>At Sievert Consulting, we turn data into insight. Our expertise is interactive data visualization, but offer numerous services surrounding the practice and dissemination of data science.</h3>
 </div>
-<div style="width: 75%; padding: 1em; height: 625px">
 <div id="carousel-o-graphics" class="carousel slide" data-ride="carousel" data-interval="false">
 <div class="carousel-inner" role="listbox">
 <div class="item active">
@@ -198,12 +194,11 @@ https://getbootstrap.com/components/#navbar
 <span class="sr-only">Next</span>
 </a>
 </div>
-</div>
-<div id="Services" style="width: 100%; padding: 1em">
+<div id="Services" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
 <h1>Services</h1>
-<div align="center">
-<h3>Our services are structured around cutting-edge free and open-source software for data science</h3>
+<h3>All our services leverage cutting-edge free and open-source software for data science</h3>
 </div>
+<div style="max-width: 700px; margin: auto">
 <div id="service-box" style="display: flex; flex-wrap: wrap; justify-content: center;">
 <div>
 <div style="display: inline">
@@ -261,11 +256,12 @@ development, support, and
 </div>
 </div>
 </div>
-<div id="Clients" style="width: 100%; padding: 1em">
+<div id="Clients" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
 <h1>Clients</h1>
-<div align="center">
 <h3>Our clients include: startups, government, universities, and corporations</h3>
 </div>
+<div style="background-color:#f6f6f6;">
+<div style="max-width: 700px; margin: auto">
 <div id="clients" style="display: flex; flex-wrap: wrap; justify-content: center;">
 <div style="padding: 1em">
 <a href="https://plot.ly/r/" target="_blank" title="Plotly">
@@ -304,9 +300,9 @@ development, support, and
 </div>
 </div>
 </div>
-<div id="Praise" style="width: 100%; padding: 1em">
+</div>
+<div id="Praise" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
 <h1>Praise</h1>
-<div align="center">
 <h3>Some nice things our clients, end-users, and audience members have said:</h3>
 </div>
 <div id="carousel-o-praise" class="carousel slide" data-ride="carousel">
@@ -331,22 +327,24 @@ development, support, and
 <span class="sr-only">Next</span>
 </a>
 </div>
-</div>
-<div id="About" style="width: 100%; padding: 1em">
+<div id="About" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
 <h1>About</h1>
-<div style="display: flex; flex-wrap: wrap; justify-content: center;">
-<div style="width: 25%; padding: 1em">
-<img src="img/carson.jpg"/>
 </div>
-<div style="width: 75%; padding: 1em">
+<div style="max-width:700px; margin: auto">
+<div id="about-box" style="display: flex; flex-wrap: wrap; justify-content: center;">
+<div id="about-pic">
+<img src="img/carson.jpg" style="margin-left:auto"/>
+</div>
+<div id="about-txt">
 <h3 style="text-align: left">Carson Sievert, PhD. Founder and Principal Consultant</h3>
-<h4><p><a href="https://cpsievert.me">Carson</a> enjoys developing software and creating products that make data analysis more accessible and less boring. He is most well-known as the maintainer of <a href="https://github.com/ropensci/plotly/graphs/contributors">plotly</a> &ndash; most widely used R package for creating interactive web graphics. His work on plotly was also recognized with the <a href="http://stat-computing.org/awards/jmc/">John Chambers Statistical Software Award</a> in 2017, just after receiving his PhD in statistics. Carson has over 5 years experience developing data science software, as well as formal training in traditional statistical methods &ndash; allowing him to attack challenging problems with domain expertise from many different areas. Whether it&#39;s a novel visualization for better model interpretation (<a href="https://github.com/cpsievert/LDAvis">LDAvis</a>), or a customized (shiny) web-application for exploring multiple datasets (e.g., <a href="https://github.com/cpsievert/zikar">zikar</a>, <a href="https://github.com/cpsievert/pedestrians">pedestrians</a>, <a href="https://github.com/ropenscilabs/eechidna/">eechidna</a>, <a href="https://github.com/cpsievert/bcviz">bcviz</a>); Carson pushes the frontier of R and JavaScript to help (himself and others) derive insight from data in a reusable, portable, reproducible, and accessible way.</p>
+<h4><p><a href="https://cpsievert.me">Carson</a> enjoys developing software and creating products that make data analysis more accessible and less boring. He is most well-known as the maintainer of <a href="https://github.com/ropensci/plotly/graphs/contributors">plotly</a> &ndash; the most widely used R package for creating interactive web graphics. His work on plotly was also recognized with the <a href="http://stat-computing.org/awards/jmc/">John Chambers Statistical Software Award</a> in 2017, just after receiving his PhD in statistics. Carson has over 5 years experience developing data science software, as well as formal training in traditional statistical methods &ndash; allowing him to attack challenging problems with domain expertise from many different areas. Whether it&#39;s a novel visualization for better model interpretation (<a href="https://github.com/cpsievert/LDAvis">LDAvis</a>), or a customized (shiny) web-application for exploring multiple datasets (e.g., <a href="https://github.com/cpsievert/zikar">zikar</a>, <a href="https://github.com/cpsievert/pedestrians">pedestrians</a>, <a href="https://github.com/ropenscilabs/eechidna/">eechidna</a>, <a href="https://github.com/cpsievert/bcviz">bcviz</a>); Carson pushes the frontier of R and JavaScript to help (himself and others) derive insight from data in a reusable, portable, reproducible, and accessible way.</p>
 </h4>
 </div>
 </div>
 </div>
-<div id="Contact" style="width: 100%; padding: 1em">
+<div id="Contact" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
 <h1>Contact</h1>
+</div>
 <div id="contact-buttons" style="display: flex; flex-wrap: wrap; justify-content: center;">
 <div style="margin-right: 15px">
 <a href="https://carsonsievert.typeform.com/to/FGtIgd" target="_blank">
@@ -363,8 +361,6 @@ development, support, and
 <h4>Schedule a meeting</h4>
 </button>
 </a>
-</div>
-</div>
 </div>
 </div>
 <!--

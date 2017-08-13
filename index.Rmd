@@ -32,8 +32,6 @@ https://getbootstrap.com/components/#navbar
       <ul class="nav navbar-nav navbar-right"> 
         <li><a href="#Services">Services</a></li>
         <li><a href="#Clients">Clients</a></li>
-        <li><a href="#Praise">Praise</a></li>
-        <li><a href="#Gallery">Gallery</a></li>
         <li><a href="#About">About</a></li>
         <li><a href="#Contact">Contact</a></li>
       </ul>
@@ -56,7 +54,7 @@ knitr::opts_chunk$set(
 
 ```{r main}
 # carousel for initial section
-carousel_graphics <- bs_carousel(id = "carousel-o-graphics") %>%
+welcome_carousel <- bs_carousel(id = "carousel-o-graphics") %>%
   bs_set_data(interval = FALSE) %>%
   bs_append(
     content = bs_carousel_image(src = "img/europe.gif"),
@@ -197,101 +195,115 @@ client_images <- div(
   ))
 )
 
-# TODO: 
-# (1) how to vertically align?
-# (2) cssify the padding?
-content <- div(
-  style = "display: flex; flex-wrap: wrap;",
+
+
+about <- div(
+  style = "max-width:700px; margin: auto",
   div(
-    style = "width: 25%; padding: 1em; height: 625px",
-    h1("Breathing life into data"),
-    h4("At Sievert Consulting, we turn data into insight. Our expertise is in interactive data visualization, but offer a wide variety of services surrounding the practice, infrastructure, and dissemination of data science.")
-  ),
-  div(style = "width: 75%; padding: 1em; height: 625px", carousel_graphics),
-  div(
-    id = "Services",
-    style = "width: 100%; padding: 1em",
-    h1("Services"), 
-    div(align = "center", h3("Our services are structured around cutting-edge free and open-source software for data science")),
-    service_box
-  ),
-  div(
-    id = "Clients",
-    style = "width: 100%; padding: 1em",
-    h1("Clients"),
-    div(align = "center", h3("Our clients include: startups, government, universities, and corporations")),
-    client_images
-  ),
-  div(
-    id = "Praise",
-    style = "width: 100%; padding: 1em",
-    h1("Praise"),
+    id = "about-box",
+    style = "display: flex; flex-wrap: wrap; justify-content: center;",
+    div(id = "about-pic", img(src = "img/carson.jpg", style = "margin-left:auto")),
     div(
-      align = "center",
-      h3("Some nice things our clients, end-users, and audience members have said:")
-    ),
-    carousel_praise
-  ),
-  # div(
-  #   id = "Gallery",
-  #   style = "width: 100%; padding: 1em",
-  #   h1("Gallery"),
-  #   div(
-  #     align = "center",
-  #     h3("A gallery of Sievert Consulting examples."),
-  #     "Coming soon"
-  #   )
-  # ),
-  div(
-    id = "About",
-    style = "width: 100%; padding: 1em",
-    h1("About"),
-    div(
-      style = "display: flex; flex-wrap: wrap; justify-content: center;",
-      div(style = "width: 25%; padding: 1em", img(src = "img/carson.jpg")),
-      div(
-        style = "width: 75%; padding: 1em", 
-        h3(style = "text-align: left", "Carson Sievert, PhD. Founder and Principal Consultant"),
-        h4(includeMarkdown("about.md"))
-      )
+      id = "about-txt",
+      h3(style = "text-align: left", "Carson Sievert, PhD. Founder and Principal Consultant"),
+      h4(includeMarkdown("about.md"))
     )
+  )
+)
+
+# reusable functions for containerizing content
+"%||%" <- function (x, y) if (length(x) > 0) x else y
+
+tagline <- function(title, body = NULL, id = NULL) {
+  div(
+    id = id %||% title,
+    class = "tagline",
+    align = "center",
+    style = "display: block; max-width: 700px; margin: auto",
+    h1(title),
+    if (!is.null(body)) h3(body)
+  )
+}
+
+banner <- function(id, ...) {
+  div(
+    id = id,
+    class = "banner",
+    ...
+  )
+}
+
+
+tagList(
+  tagline(
+    "Breathing life into data",
+    "At Sievert Consulting, we turn data into insight. Our expertise is interactive data visualization, but offer numerous services surrounding the practice and dissemination of data science."
+  ),
+  welcome_carousel,
+  tagline(
+    "Services",
+    "All our services leverage cutting-edge free and open-source software for data science"
+  ),
+  div(style = "max-width: 700px; margin: auto", service_box),
+  tagline(
+    "Clients",
+    "Our clients include: startups, government, universities, and corporations"
   ),
   div(
-    id = "Contact",
-    style = "width: 100%; padding: 1em",
-    h1("Contact"),
+    style = "background-color:#f6f6f6;", 
+    div(style = "max-width: 700px; margin: auto", client_images)
+  ),
+  tagline(
+    "Praise",
+    "Some nice things our clients, end-users, and audience members have said:"
+  ),
+  carousel_praise,
+  tagline("About"),
+  about,
+  tagline("Contact"),
+  div(
+    id = "contact-buttons",
+    style = "display: flex; flex-wrap: wrap; justify-content: center;",
     div(
-      id = "contact-buttons",
-      style = "display: flex; flex-wrap: wrap; justify-content: center;", 
-      div(
-        style = "margin-right: 15px",
-        a(
-          href = "https://carsonsievert.typeform.com/to/FGtIgd",
-          target = "_blank",
-          tags$button(
-            type = "button", class = "btn btn-secondary btn-lg", 
-            htmltools::tags$i(class = "fa fa-envelope fa-fw fa-2x", `aria-hidden`="true"),
-            h4("Drop us a note")
-          )
+      style = "margin-right: 15px",
+      a(
+        href = "https://carsonsievert.typeform.com/to/FGtIgd",
+        target = "_blank",
+        tags$button(
+          type = "button", class = "btn btn-secondary btn-lg",
+          htmltools::tags$i(class = "fa fa-envelope fa-fw fa-2x", `aria-hidden`="true"),
+          h4("Drop us a note")
         )
-      ),
-      div(
-        style = "margin-left: 15px",
-        a(
-          href = "https://calendly.com/cpsievert/meeting",
-          target = "_blank",
-          tags$button(
-            type = "button", class = "btn btn-secondary btn-lg", 
-            htmltools::tags$i(class = "fa fa-calendar fa-fw fa-2x", `aria-hidden`="true"),
-            h4("Schedule a meeting")
-          )
+      )
+    ),
+    div(
+      style = "margin-left: 15px",
+      a(
+        href = "https://calendly.com/cpsievert/meeting",
+        target = "_blank",
+        tags$button(
+          type = "button", class = "btn btn-secondary btn-lg",
+          htmltools::tags$i(class = "fa fa-calendar fa-fw fa-2x", `aria-hidden`="true"),
+          h4("Schedule a meeting")
         )
       )
     )
   )
 )
+```
 
-content
+
+```{r}
+# div(
+#   id = "Gallery",
+#   style = "width: 100%; padding: 1em",
+#   h1("Gallery"),
+#   div(
+#     align = "center",
+#     h3("A gallery of Sievert Consulting examples."),
+#     "Coming soon"
+#   )
+# ),
 ```
 
 
