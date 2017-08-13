@@ -9,7 +9,8 @@ https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/
 
 body{
   font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
-  background-color: #272822;
+  background-color: #555;
+  /*background-color: #272822;*/
   color: #d6d6d6;
   text-shadow: 0 0 20px #333;
   /* https://getbootstrap.com/components/#navbar-fixed-top */
@@ -20,6 +21,17 @@ h1, h2, h3{
   font-weight: normal;
   color: #f3f3f3;
   text-align: center;
+}
+
+/* default bootstrap styling of links on hover don't look great */
+a:visted {
+  color: #f3f3f3 !important;
+  text-shadow: none !important;
+}
+
+a:hover {
+  color: #f3f3f3 !important;
+  cursor: pointer !important;
 }
 
 /* https://stackoverflow.com/questions/24603003/changing-the-maximum-width-of-r-markdown-documents */
@@ -48,6 +60,17 @@ body .main-container{
   padding: 1em;
 }
 
+#about-pic img {
+  border-radius: 15px;
+  filter: grayscale(100%);
+}
+
+#about-pic img:hover {
+  filter: none;
+}
+
+
+
 #about-txt {
   width: 70%;
   padding: 1em;
@@ -72,6 +95,9 @@ body .main-container{
   filter: grayscale(100%);
 }
 
+
+
+
 #clients a:hover img {
   filter: none;
   box-shadow:10px 10px 7px rgba(0,0,0,.7);
@@ -83,11 +109,11 @@ body .main-container{
   z-index:5;
 }
 
-#About img {
-  border-radius: 15px;
-  margin-top: 1em;
+#contact-buttons button {
+  color: #337ab7 !important;
+  background-color: #d6d6d6 !important;
 }
 
-#contact-buttons {
-  color: black;
+#contact-buttons a:hover button {
+  color: black !important;
 }

@@ -103,6 +103,12 @@ icons <- function(names = "terminal") {
       class = sprintf("fa fa-%s fa-fw fa-3x", names[[i]]),
       `aria-hidden` = "true"
     )
+    # add a link to the logo if names attr exists
+    if (!is.null(names(names))) {
+      icon_list[[i]] <- htmltools::tags$a(
+        href = names(names)[[i]], target = "_blank", icon_list[[i]]
+      )
+    }
   }
   htmltools::tags$div(style = "display: inline", icon_list)
 }
@@ -265,7 +271,7 @@ tagList(
     id = "contact-buttons",
     style = "display: flex; flex-wrap: wrap; justify-content: center;",
     div(
-      style = "margin-right: 15px",
+      style = "padding: 1em",
       a(
         href = "https://carsonsievert.typeform.com/to/FGtIgd",
         target = "_blank",
@@ -277,7 +283,7 @@ tagList(
       )
     ),
     div(
-      style = "margin-left: 15px",
+      style = "padding: 1em",
       a(
         href = "https://calendly.com/cpsievert/meeting",
         target = "_blank",
@@ -288,22 +294,9 @@ tagList(
         )
       )
     )
-  )
+  ),
+  br(), br(), hr()
 )
-```
-
-
-```{r}
-# div(
-#   id = "Gallery",
-#   style = "width: 100%; padding: 1em",
-#   h1("Gallery"),
-#   div(
-#     align = "center",
-#     h3("A gallery of Sievert Consulting examples."),
-#     "Coming soon"
-#   )
-# ),
 ```
 
 
@@ -321,7 +314,15 @@ setTimeout(function() {
 ```{r footer}
 tags$footer(
   div(
-    "Copyright 2017 Sievert Consulting"
+    style = "max-width: 700px; height:75px; margin: auto",
+    div(style = "display:inline-block; margin:auto", "Copyright 2017 Sievert Consulting"),
+    div(
+      style = "display:inline-block; float:right; margin:auto",
+      icons(c("mailto:cpsievert1@gmail.com" = "envelope-o")),
+      icons(c("https://twitter.com/cpsievert" = "twitter")),
+      icons(c("https://github.com/cpsievert" = "github")),
+      icons(c("https://vimeo.com/cpsievert" = "vimeo"))
+    )
   )
 )
 ```
