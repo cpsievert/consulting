@@ -185,7 +185,7 @@ client_images <- div(
     href = "https://www.helsinki.fi/en", 
     target = "_blank",
     title = "University of Helsinki",
-    img(src = "/img/hu.jpg")
+    img(src = "/img/hu.png")
   )),
   div(style = "padding: 1em", a(
     href = "http://nycdatascience.com/", 
