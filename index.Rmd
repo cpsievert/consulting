@@ -302,15 +302,22 @@ tagList(
 )
 ```
 
-
 <!--
 Flip carousel after the initial graphic has had time to play twice
+https://stackoverflow.com/questions/14524297/how-to-scroll-to-div-after-click-on-about-or-contact-in-my-menu
 -->
 
 ```{js}
 setTimeout(function() {
   $('#carousel-o-graphics').carousel('next')
 }, 15000)
+
+$('ul.nav').find('a').click(function(){
+    var href = $(this).attr('href');
+    var $anchor = $(href).offset();
+    $('body').animate({ scrollTop: $anchor.top });
+    return false;
+});
 ```
 
 

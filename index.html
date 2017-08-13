@@ -22,11 +22,15 @@
 <script src="index_files/navigation-1.1/tabsets.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title> Sievert Consulting LLC </title>
+<title> Sievert Consulting </title>
 <meta name="author" content="Carson Sievert">
 <meta name="description" content="Sievert consulting provides solutions, advice, and training surrounding state-of-the-art open-source software for data analysis and visualization">
 <meta name="keywords" content="r,rstats,rstudio,statistics,machine learning,data visualization,graphs,graphics,plotly,r plotly,r shiny,shiny apps,r shiny apps,shiny developer,r shiny developer">
 <!-- TODO: open graph http://ogp.me/ -->
+
+<meta property="description" content="Sievert Consulting" >
+<meta property="og:title" content="Sievert Consulting" >
+<meta property="og:type" content="website" >
 
 
 
@@ -383,11 +387,21 @@ development, support, and
 <hr/>
 <!--
 Flip carousel after the initial graphic has had time to play twice
+https://stackoverflow.com/questions/14524297/how-to-scroll-to-div-after-click-on-about-or-contact-in-my-menu
 -->
 <script type="text/javascript">
 setTimeout(function() {
   $('#carousel-o-graphics').carousel('next')
 }, 15000)
+
+$('ul.nav').find('a').click(function(){
+    var href = $(this).attr('href');
+    console.log(href);
+    var $anchor = $(href).offset();
+    console.log($anchor);
+    $('body').animate({ scrollTop: $anchor.top });
+    return false;
+});
 </script>
 <footer>
 <div style="max-width: 700px; height:75px; margin: auto">
