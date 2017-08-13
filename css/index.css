@@ -45,6 +45,12 @@ body .main-container{
   left:auto;
   right:auto;
   padding-bottom:0;
+  max-width:700px;
+  margin:auto;
+}
+
+.fa:hover {
+  color: black;
 }
 
 /* three services per line (by default) */
@@ -94,9 +100,6 @@ body .main-container{
   border-radius: 15px;
   filter: grayscale(100%);
 }
-
-
-
 
 #clients a:hover img {
   filter: none;

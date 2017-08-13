@@ -59,19 +59,27 @@ welcome_carousel <- bs_carousel(id = "carousel-o-graphics") %>%
   bs_append(
     content = bs_carousel_image(src = "img/europe.gif"),
     caption = bs_carousel_caption(
-      "Figure 1: Zooming, hovering, and highlighting on a population map of Europe."
+      "Zooming, hovering, and highlighting on a population map of Europe."
     )
   ) %>%
   bs_append(
     content = bs_carousel_image(src = "img/zikar-colombia.gif"),
     caption = bs_carousel_caption(
-      "Figure 2: Comparing overall frequency of Zika virus cases (black) versus frequency within the map (red)."
+      "Comparing overall frequency of Zika virus cases (black) versus frequency within the map (red)."
+    )
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/bcviz.gif"),
+    caption = bs_carousel_caption(
+      HTML(
+        "Visualizing multiple time series of housing transactions in British Columbia. See <a href='https://vimeo.com/207379729'>here</a> for a full video"
+      )
     )
   ) %>%
   bs_append(
     content = bs_carousel_image(src = "img/pedestrians-missing.gif"),
     caption = bs_carousel_caption(
-      "Figure 3: Comparing foot traffic in various train stations among those with highest number of missing values."
+      "Comparing foot traffic in various train stations among those with highest number of missing values."
     )
   ) %>%
   # TODO: make a better version!
@@ -84,13 +92,13 @@ welcome_carousel <- bs_carousel(id = "carousel-o-graphics") %>%
   bs_append(
     content = bs_carousel_image(src = "img/quakes.gif"),
     caption = bs_carousel_caption(
-      "Figure 4: Exploring relationship between earthquake magnitude and geographic location"
+      "Exploring relationship between earthquake magnitude and geographic location"
     )
   ) %>%
   bs_append(
     content = bs_carousel_image(src = "img/tour.gif"),
     caption = bs_carousel_caption(
-      "Figure 5: Choosing 3 groups of 'similar' US states (via Euclidean distance of arrest data). The rotating graph (aka, a grand tour) cycles through 2D projections of the data -- allowing us to assess how the clustering appears from many different perspectives."
+      "Choosing 3 groups of 'similar' US states (via Euclidean distance of arrest data). The rotating graph (aka, a grand tour) cycles through 2D projections of the data -- allowing us to assess how the clustering appears from many different perspectives."
     )
   )
 
@@ -231,26 +239,19 @@ tagline <- function(title, body = NULL, id = NULL) {
   )
 }
 
-banner <- function(id, ...) {
-  div(
-    id = id,
-    class = "banner",
-    ...
-  )
-}
-
-
 tagList(
   tagline(
     "Breathing life into data",
-    "At Sievert Consulting, we turn data into insight. Our expertise is interactive data visualization, but offer numerous services surrounding the practice and dissemination of data science."
+    "At Sievert Consulting, we turn data into insight. Our passion is data visualization, but we offer many services surrounding the practice and dissemination of data science."
   ),
   welcome_carousel,
+  hr(), br(),
   tagline(
     "Services",
     "All our services leverage cutting-edge free and open-source software for data science"
   ),
   div(style = "max-width: 700px; margin: auto", service_box),
+  hr(), br(),
   tagline(
     "Clients",
     "Our clients include: startups, government, universities, and corporations"
@@ -259,11 +260,13 @@ tagList(
     style = "background-color:#f6f6f6;", 
     div(style = "max-width: 700px; margin: auto", client_images)
   ),
+  br(),
   tagline(
     "Praise",
     "Some nice things our clients, end-users, and audience members have said:"
   ),
   carousel_praise,
+  br(),
   tagline("About"),
   about,
   tagline("Contact"),
