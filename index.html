@@ -396,9 +396,7 @@ setTimeout(function() {
 
 $('ul.nav').find('a').click(function(){
     var href = $(this).attr('href');
-    console.log(href);
     var $anchor = $(href).offset();
-    console.log($anchor);
     $('body').animate({ scrollTop: $anchor.top });
     return false;
 });

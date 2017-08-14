@@ -49,10 +49,6 @@ body .main-container{
   margin:auto;
 }
 
-.fa:hover {
-  color: black;
-}
-
 /* three services per line (by default) */
 #service-box div {
   width: 50%;
@@ -74,8 +70,6 @@ body .main-container{
 #about-pic img:hover {
   filter: none;
 }
-
-
 
 #about-txt {
   width: 70%;
