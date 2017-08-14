@@ -23,6 +23,10 @@ h1, h2, h3{
   text-align: center;
 }
 
+a {
+  text-shadow: 0 0 10px black;
+}
+
 /* default bootstrap styling of links on hover don't look great */
 a:visted {
   color: #f3f3f3 !important;
