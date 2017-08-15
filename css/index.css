@@ -28,8 +28,13 @@ a {
   color: #41baf7 !important;
 }
 
-/* except in the navbar */
-.navbar a {
+/* and the carousel controls */
+.navbar-fixed-top a {
+  color: #d6d6d6 !important;
+}
+
+/* and the carousel controls */
+.carousel-control {
   color: #d6d6d6 !important;
 }
 
