@@ -132,7 +132,7 @@ service_box <- div(
   ),
   div(
     icons(c("server", "desktop")), 
-    h4(a(href = "https://shiny.rstudio.com/", target = "_blank", "Shiny"), " app development and support")
+    h4(a(href = "https://shiny.rstudio.com/", target = "_blank", "Shiny"), " app development, deployment, management, and support")
   ),
   div(
     icons(c("line-chart", "bar-chart", "mouse-pointer")),
