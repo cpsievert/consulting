@@ -184,6 +184,12 @@ client_images <- div(
     img(src = "/img/oreilly.png")
   )),
   div(style = "padding: 1em", a(
+    href = "https://www.robustwealth.com/", 
+    target = "_blank",
+    title = "RobustWealth",
+    img(src = "/img/robustwealth.jpeg")
+  )),
+  div(style = "padding: 1em", a(
     href = "http://www.bcstats.gov.bc.ca/", 
     target = "_blank",
     title = "BC Stats (BC Government)",
@@ -314,9 +320,7 @@ setTimeout(function() {
 
 $('ul.nav').find('a').click(function(){
     var href = $(this).attr('href');
-    var $anchor = $(href).offset();
-    $('body').animate({ scrollTop: $anchor.top });
-    return false;
+    $('html, body').animate({ scrollTop: $(href).offset().top }, 2000);
 });
 ```
 
