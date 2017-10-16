@@ -215,7 +215,7 @@ about <- div(
   div(
     id = "about-box",
     style = "display: flex; flex-wrap: wrap; justify-content: center;",
-    div(id = "about-pic", a(href = "https://cpsievert.me/", target = "_blank", img(src = "img/carson.jpg"))),
+    div(id = "about-pic", a(href = "https://cpsievert.me/", target = "_blank", img(src = "img/carson.png"))),
     div(
       id = "about-txt",
       h3(style = "text-align: left", "Carson Sievert, PhD. Founder and Principal Consultant"),
