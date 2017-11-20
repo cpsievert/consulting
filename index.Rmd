@@ -155,10 +155,16 @@ service_box <- div(
 # carousel for praise section
 carousel_praise <- bs_carousel(id = "carousel-o-praise") %>%
   bs_append(
-    content = bs_carousel_image(src = "img/roy.svg")
+    content = bs_carousel_image(src = "img/praise-1.svg")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = "img/joseph.svg")
+    content = bs_carousel_image(src = "img/praise-2.svg")
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/praise-3.svg")
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/praise-4.svg")
   )
 
 # flexbox of client images
@@ -268,7 +274,7 @@ tagList(
   br(),
   tagline(
     "Praise",
-    "Some nice things our clients, end-users, and audience members have said:"
+    "Feedback from clients and workshop attendees"
   ),
   carousel_praise,
   br(),
