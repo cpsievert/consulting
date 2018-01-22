@@ -184,6 +184,12 @@ client_images <- div(
     img(src = "/img/noaa.png")
   )),
   div(style = "padding: 1em", a(
+    href = "http://www.sandia.gov/", 
+    target = "_blank",
+    title = "Sandia Labs",
+    img(src = "/img/sandia.png")
+  )),
+  div(style = "padding: 1em", a(
     href = "", 
     target = "_blank",
     title = "O'Reilly Media",
