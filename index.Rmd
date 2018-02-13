@@ -154,11 +154,14 @@ service_box <- div(
 
 # carousel for praise section
 carousel_praise <- bs_carousel(id = "carousel-o-praise") %>%
+  #bs_append(
+  #  content = bs_carousel_image(src = "img/praise-1.svg")
+  #) %>%
+  #bs_append(
+  #  content = bs_carousel_image(src = "img/praise-2.svg")
+  #) %>%
   bs_append(
-    content = bs_carousel_image(src = "img/praise-1.svg")
-  ) %>%
-  bs_append(
-    content = bs_carousel_image(src = "img/praise-2.svg")
+    content = bs_carousel_image(src = "img/praise.svg")
   ) %>%
   bs_append(
     content = bs_carousel_image(src = "img/praise-3.svg")

@@ -106,7 +106,7 @@ body .main-container{
   https://codepen.io/tutsplus/pen/dNPReW
 */
 #clients img {
-  border-radius: 15px;
+  border-radius: 10px;
   filter: grayscale(100%);
 }
 
