@@ -31,7 +31,7 @@ https://getbootstrap.com/components/#navbar
     <div class="collapse navbar-collapse" id="navbar-list">
       <ul class="nav navbar-nav navbar-right"> 
         <li><a href="#Services">Services</a></li>
-        <li><a href="#Clients">Clients</a></li>
+        <li><a href="#Training">Training</a></li>
         <li><a href="#About">About</a></li>
         <li><a href="#Contact">Contact</a></li>
       </ul>
@@ -57,10 +57,8 @@ knitr::opts_chunk$set(
 welcome_carousel <- bs_carousel(id = "carousel-o-graphics") %>%
   bs_set_data(interval = FALSE) %>%
   bs_append(
-    content = bs_carousel_image(src = "img/europe.gif"),
-    caption = bs_carousel_caption(
-      "Zooming, hovering, and highlighting on a population map of Europe."
-    )
+    content = bs_carousel_image(src = "img/storms.gif"),
+    caption = bs_carousel_caption("Exploring 3D and 2D views of tropical storm paths.")
   ) %>%
   bs_append(
     content = bs_carousel_image(src = "img/zikar-colombia.gif"),
@@ -76,12 +74,18 @@ welcome_carousel <- bs_carousel(id = "carousel-o-graphics") %>%
       )
     )
   ) %>%
-  bs_append(
-    content = bs_carousel_image(src = "img/pedestrians-missing.gif"),
-    caption = bs_carousel_caption(
-      "Comparing foot traffic in various train stations among those with highest number of missing values."
-    )
-  ) %>%
+  # bs_append(
+  #   content = bs_carousel_image(src = "img/europe.gif"),
+  #   caption = bs_carousel_caption(
+  #     "Zooming, hovering, and highlighting on a population map of Europe."
+  #   )
+  # ) %>%
+  # bs_append(
+  #   content = bs_carousel_image(src = "img/pedestrians-missing.gif"),
+  #   caption = bs_carousel_caption(
+  #     "Comparing foot traffic in various train stations among those with highest number of missing values."
+  #   )
+  # ) %>%
   # TODO: make a better version!
   # bs_append(
   #   content = bs_carousel_image(src = "img/pedestrians-entropy.gif"),
@@ -341,7 +345,7 @@ https://stackoverflow.com/questions/14524297/how-to-scroll-to-div-after-click-on
 ```{js}
 setTimeout(function() {
   $('#carousel-o-graphics').carousel('next')
-}, 15000)
+}, 27000)
 
 $('ul.nav').find('a').click(function(){
     var href = $(this).attr('href');
