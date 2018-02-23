@@ -136,7 +136,7 @@ service_box <- div(
   ),
   div(
     icons(c("terminal", "user", "graduation-cap")), 
-    h4("Programming support and training (we're a trusted", a(href = "https://www.rstudio.com/instructors", target = "_blank", "RStudio instructor"), ")")
+    h4("Programming support and ", a(href = '#training', "training"))
   ),
   div(
     icons(c("question-circle", "info-circle")),
@@ -149,6 +149,15 @@ service_box <- div(
   div(
     icons(c("database", "table")),
     h4("Data acquistion, cleaning, management")
+  ),
+  a(
+    href = "https://carsonsievert.typeform.com/to/FGtIgd",
+    target = "_blank",
+    tags$button(
+      type = "button", class = "btn btn-secondary btn-lg",
+      htmltools::tags$i(class = "fa fa-paper-plane-o fa-fw fa-2x", `aria-hidden`="true"),
+      h4("Request a consultation")
+    )
   )
 )
 
@@ -193,7 +202,7 @@ client_images <- div(
     img(src = "/img/sandia.png")
   )),
   div(style = "padding: 1em", a(
-    href = "", 
+    href = "http://www.oreilly.com/pub/au/7341", 
     target = "_blank",
     title = "O'Reilly Media",
     img(src = "/img/oreilly.png")
@@ -209,12 +218,6 @@ client_images <- div(
     target = "_blank",
     title = "University of Georgia",
     img(src = "/img/uga.png")
-  )),
-   div(style = "padding: 1em", a(
-    href = "https://www.helsinki.fi/en", 
-    target = "_blank",
-    title = "University of Helsinki",
-    img(src = "/img/hu.png")
   )),
   div(style = "padding: 1em", a(
     href = "http://www.bcstats.gov.bc.ca/", 
@@ -280,6 +283,14 @@ tagList(
     style = "background-color:#f6f6f6;", 
     div(style = "max-width: 700px; margin: auto", client_images)
   ),
+  br(),
+  tagline(
+    "Training",
+    p(a(href = '#about', "Carson"), "is a", a(href = "https://www.rstudio.com/instructors/", "trusted RStudio trainer"),
+    "with over 5 years experience teaching university courses and running interactive ", a(href = "https://workshops.cpsievert.me", "workshops"), ". Sign up for his next PLOTCON workshop below,", a(href = "https://carsonsievert.typeform.com/to/FKUSbW", "request an on-site training"),  ", and ", a(href = "https://blog.cpsievert.me/2017/12/04/components-of-a-successful-r-workshop/", "read about"), "his teaching philosophy.")
+  ),
+  br(),
+  div(align = "center", tags$iframe(src = "https://plotcon.plot.ly", height = 600, width = "60%", seamless="seamless", frameBorder="0")),
   br(),
   tagline(
     "Praise",
