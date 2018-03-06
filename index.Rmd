@@ -1,4 +1,5 @@
 ---
+pagetitle: "Sievert Consulting - R, RStudio, shiny, plotly, data visualization consulting, training, instruction"
 output:
   html_document:
     highlight: null
@@ -167,20 +168,17 @@ service_box <- div(
 
 # carousel for praise section
 carousel_praise <- bs_carousel(id = "carousel-o-praise") %>%
-  #bs_append(
-  #  content = bs_carousel_image(src = "img/praise-1.svg")
-  #) %>%
-  #bs_append(
-  #  content = bs_carousel_image(src = "img/praise-2.svg")
-  #) %>%
   bs_append(
-    content = bs_carousel_image(src = "img/praise.svg")
+    content = bs_carousel_image(src = "praise/andrew-kosydar.svg")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = "img/praise-3.svg")
+    content = bs_carousel_image(src = "praise/mark-druffel.svg")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = "img/praise-4.svg")
+    content = bs_carousel_image(src = "praise/roy-mendelssohn.svg")
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "praise/joseph-rickert.svg")
   )
 
 # flexbox of client images
@@ -275,10 +273,11 @@ tagList(
   hr(), br(),
   tagline(
     "Services",
-    "All our services leverage cutting-edge free and open-source software for data science"
+    "We deliver data-driven products & insights faster than the competition thanks to our background in visualization, analytics, and software development."
   ),
+  br(),
   div(style = "max-width: 700px; margin: auto", service_box),
-  hr(), br(),
+  br(), hr(), br(),
   tagline(
     "Clients",
     "Our clients include: startups, government, universities, and corporations"
