@@ -169,6 +169,9 @@ service_box <- div(
 # carousel for praise section
 carousel_praise <- bs_carousel(id = "carousel-o-praise") %>%
   bs_append(
+    content = bs_carousel_image(src = "praise/leigh-alexander.svg")
+  ) %>%
+  bs_append(
     content = bs_carousel_image(src = "praise/andrew-kosydar.svg")
   ) %>%
   bs_append(
@@ -176,9 +179,6 @@ carousel_praise <- bs_carousel(id = "carousel-o-praise") %>%
   ) %>%
   bs_append(
     content = bs_carousel_image(src = "praise/roy-mendelssohn.svg")
-  ) %>%
-  bs_append(
-    content = bs_carousel_image(src = "praise/joseph-rickert.svg")
   )
 
 # flexbox of client images
