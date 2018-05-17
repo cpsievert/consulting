@@ -293,7 +293,7 @@ tagList(
     "with over 5 years experience teaching university courses and running interactive ", a(href = "https://workshops.cpsievert.me", "workshops"), ". Sign up for his next PLOTCON workshop below,", a(href = "https://carsonsievert.typeform.com/to/FKUSbW", "request an on-site training"),  ", and ", a(href = "https://blog.cpsievert.me/2017/12/04/components-of-a-successful-r-workshop/", "read about"), "his teaching philosophy.")
   ),
   br(),
-  div(align = "center", tags$iframe(src = "https://plotcon.plot.ly", height = 600, width = "60%", seamless="seamless", frameBorder="0")),
+  div(align = "center", tags$iframe(src = "https://plotcon.plot.ly/r-shiny-dash-r/", height = 600, width = "60%", seamless="seamless", frameBorder="0")),
   br(),
   tagline(
     "Praise",
