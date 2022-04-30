@@ -1,0 +1,138 @@
+---
+title: "Sievert consulting's on-site training programs"
+output: html_document
+---
+
+## Overview
+
+Sievert consulting offers on-site training programs to get your team up and running doing [data science with R](http://r4ds.had.co.nz/). Most programs assume a basic understanding of [R](https://www.r-project.org/), but those entirely new to R can get an introduction and strong foundation for further training with the [Intro to R, RStudio, and the tidyverse](#programs) program. Our head trainer, [Dr. Carson Sievert](https://cpsievert.me/), is a former university lecturer, is [certified](/certificate.pdf) and [promoted](https://www.rstudio.com/instructors) by [RStudio](https://rstudio.com) for teaching, received the John Chambers statistical software award for his work on [plotly](https://plotly-book.cpsievert.me), and has been running such R training programs [for years](https://workshops.cpsievert.me).
+
+TODO: buttons that populate hidden fields in a typeform -- https://www.typeform.com/help/what-are-hidden-fields/
+[Request a training button]()
+
+## Program features
+
+* No IT setup required. We bring the computational environment to you via [RStudio cloud](https://rstudio.cloud/).
+
+* Content can be tailored to fit your domain.
+
+* Learn [plotly](https://cran.r-project.org/package=plotly) directly from the author
+
+* Content is reinforced through the [think-pair-share](https://en.wikipedia.org/wiki/Think-pair-share) strategy.
+
+* Follow up quizzes ensures important concepts are retained.
+
+* Content is constantly updated and delivered by the same person which promotes insightful presentation of modern tools
+
+## Programs
+
+Although different programs cover different facets of a data science workflow (below), each one assumes minimal background knowledge so that anyone can start doing powerful things quickly.
+
+```{r}
+knitr::include_graphics("http://r4ds.had.co.nz/diagrams/data-science-explore.png")
+```
+
+### Intro to R, RStudio, and the tidyverse
+
+This program focuses on things that R offers to those already familiar with standard enterprise software for working with data (e.g. Excel, Access, SQL). In addition to basic concepts surrounding R and RStudio, we cover key frameworks that are critical for effective understanding and use of the [tidyverse](https://www.tidyverse.org/), such as [tidy data](https://www.jstatsoft.org/article/view/v059i10), the [split-apply-combine technique](https://www.jstatsoft.org/article/view/v040i01), and the [grammar of graphics](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448). By the end of the program, you will be creating HTML, pdf, and word documents that capture an entire computational analysis with embedded artifacts such as interactive graphics and tables.
+
+R packages: [tidyverse](https://www.tidyverse.org/), [rmarkdown](https://rmarkdown.rstudio.com/), [plotly](https://plot.ly/r/)
+Workflow: import, tidy, transform, visualize, wrangle, communicate
+
+### Automated analysis pipelines in R
+
+Automation, transparency, and replication are core principles of the R language that many large corporations (e.g., [Google](https://www.r-bloggers.com/r-at-google/) [AirBnB](https://peerj.com/preprints/3182.pdf), [Twitter](https://medium.com/@rchang/my-two-year-journey-as-a-data-scientist-at-twitter-f0c13298aee6), etc) rely on to automate their models and reports. Save time and money by automating your reporting pipeline(s) via R's rich ecosystem for importing data (e.g., [Excel](https://readxl.tidyverse.org/), [SAS](https://haven.tidyverse.org/), etc), transforming data, visualizing data, and generating documents (e.g. [rmarkdown](https://rmarkdown.rstudio.com/)). For an additional fee, we'll work with your team prior to the training and present a prototype on-site.
+
+### Augmenting data exploration with interactive graphics
+
+This program teaches you how to rapidly pose queries about data with interactive web graphics made using [the R package plotly](https://plot.ly/r/). By the end of the program, you'll be linking and animating multiple views both [with](https://plotly-book.cpsievert.me/linking-views-without-shiny.html) and [without](https://plotly-book.cpsievert.me/linking-views-without-shiny.html) a web server framework (e.g. shiny and dasher). In addition, to promote a seamless exploratory workflow, the program also teaches and builds upon [tidyverse](https://www.tidyverse.org/) tools and concepts for wrangling data, such as [tidy data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html), reshaping data, and the [split-apply-combine technique](https://www.jstatsoft.org/article/view/v040i01).
+
+R packages: [plotly](https://plot.ly/r/), [leaflet](https://rstudio.github.io/leaflet/), [crosstalk](https://rstudio.github.io/crosstalk/), [htmlwidgets](http://htmlwidgets.org), [shiny](https://shiny.rstudio.com/)
+Workflow: tidy, transform, visualize, communicate
+
+### Exploratory visualization with ggplot2
+
+The R package **ggplot2** is used by hundreds of thousands of people working with data to quickly visualize and present their analysis. It implements a powerful cognitive framework for thinking about graphics, namely the _Grammar of Graphics_, which views any visualization as combination of 5 different components. These components (geometry, position, aesthetic, scale, and statistic) are fairly simple to understand in isolation, but may be combined in different ways to create essentially any graphic. This program teaches a mental model necessary to master **ggplot2**, and as a result, provides a foundation for improving your visualization workflow by reducing the amount of time and effort spent iterating from one visualization to the next.
+
+R packages: [ggplot2](http://ggplot2.tidyverse.org/), [tidyr](http://tidyr.tidyverse.org/), [dplyr](http://dplyr.tidyverse.org/)
+Workflow: import, tidy, visualize
+
+
+## Best practices in data visualization
+
+What makes one graph "better" than another, even when it presents the same information? One might think the question is a subjective one, but there is objective research showing that certain approaches work better than others when it comes to decoding information from graphical objects accurately. Effective data visualization leverages our ability to recognize patterns and avoids weaknesses in our ability to visually perceive and compare objects.
+
+R packages: [ggplot2](http://ggplot2.tidyverse.org/)
+Workflow: visualize, communicate
+
+
+
+### Dynamic reporting with rmarkdown
+
+Learn how to quickly create beautiful, replicable, and dynamic documents in various output formats (e.g., HTML, PDF, Word, etc) and styles (e.g., tufte, xariangan, etc) with **rmarkdown**. The **rmarkdown** framework allows you to reduce tedious manual work (e.g. refreshing spreadsheets, copy/paste, etc) and encapsulate your entire workflow so you can more quickly and easily update your reports -- even months or years down-the-road -- by interweaving markdown and code (e.g., R, python, Julia, SAS, etc).
+
+R packages: [rmarkdown](https://rmarkdown.rstudio.com/), [knitr](https://yihui.name/knitr), [tufte](https://rstudio.github.io/tufte/), [xaringan](https://github.com/yihui/xaringan/), [bookdown](https://bookdown.org)
+Workflow: visualize, communicate
+
+### Tools for web scraping
+
+Nowadays there is a wealth of information available on the web that can supplement and enhance understanding of your data. This program shows you how to (ethically) import messy web-based data formats (e.g. HTML, XML, json, etc) into R for downstream analysis and visualization. 
+
+R packages: [rvest](https://cran.r-project.org/package=rvest), [xml2](http://xml2.r-lib.org/), [httr](http://httr.r-lib.org/), [rdom](https://github.com/cpsievert/rdom)
+Workflow: import, tidy, visualize
+
+### Intro to text mining & topic modeling
+
+Navigate through and extract insight from large collections of unstructured text. In addition to counting and other simple statistics, this program covers more advanced natural language processing (NLP) techniques such as topic models. Many tech companies such as Google, AT&T, and Facebook use topic modeling to classify documents by extracting hidden topics (i.e., themes). This program also covers a popular tool, show in [this video](https://www.youtube.com/watch?v=IksL96ls4o0), for interpreting these themes using interactive visualization.
+
+R packages: [tidytext](https://www.tidytextmining.com/),  [topicmodels](https://cran.r-project.org/package=topicmodels), [lda](https://cran.r-project.org/package=lda) [LDAvis](https://github.com/cpsievert/LDAvis)
+Workflow: tidy, visualize, model, communicate
+Image: ../cpsievert.me/images/thumbs/LDAvis.svg 
+
+
+### Intro to statistical and machine learning
+
+Learn useful concepts and computational methods for estimation and prediction. This program focuses on randomization techniques (e.g., bootstrap, kmeans, etc), that are robust to distributional assumptions and do not require a mathematical background to grasp.
+
+R packages: [caret](http://topepo.github.io/caret/index.html), [tensorflow](https://tensorflow.rstudio.com/), [MASS](http://www.springer.com/us/book/9780387954578)
+Workflow: model, visualize, transform, communicate
+
+### Intro to generalized linear and additive models
+
+Generalized Linear Models (GLMs) are a class of linear regression models designed to handle a variety of data types (e.g. count, percentage, or rate observed over time, etc). Generalized additive models (GAMs) are an extension of Generalized Linear Models (GLMs) that are more robust and flexible, but less interpretable. Advantages and disadvantages of both approaches are demonstrated through a series of examples
+
+R packages: [mgcv](https://cran.r-project.org/package=mgcv)
+Workflow: model, visualize, transform, communicate
+
+
+### Developing R packages
+
+R packages are a useful way to make your code, data, documentation, and methodology more accessible to others inside your organization and/or the general public. This program demonstrates modern tools for fast and effective R package development, including **roxygen2** for documentation, **testthat** for unit testing, **base** for debugging, **profvis** for code profiling, **devtools** for seamless workflows, **git2r** for tracking history, and [Github](https://github.com/) for collaboration and distributing your work. Advanced development topics may also be covered upon request (e.g., continuous integration with [Travis CI](https://travis-ci.org/), integrating R and C++ with [Rcpp](http://www.rcpp.org/), and OOP paradigms such as S3).
+
+R packages: [devtools](https://cran.r-project.org/package=devtools), [roxygen2](https://cran.r-project.org/package=roxygen2), [testthat](https://cran.r-project.org/package=testthat), [profvis](https://cran.r-project.org/package=profvis)
+Workflow: communicate
+
+<!--
+### Intro to bayesian analysis
+
+In probability and statistics, there are two major paradigms: [bayesian](https://en.wikipedia.org/wiki/Bayesian_probability) and [frequentist](https://en.wikipedia.org/wiki/Frequentist_probability). Bayesian is preferred to frequentist typically for a few reasons: 
+
+* Mathematical convenience:
+* Philosophy: more natural probability statements
+* Sequential analysis: incorporate a [prior](https://en.wikipedia.org/wiki/Prior_probability) belief 
+
+R packages: 
+Workflow: model, visualize, transform, communicate
+-->
+
+
+
+### Custom programs
+
+Want to pick and choose topics from these programs into a custom program? Have a list of required content that isn't mention here? Even if it falls out of our domain of expertise, we may be willing to build another program. Get in touch to 
+
+
+## Praise 
+
+* Mark Druffel
+* Andrew K

@@ -1,0 +1,17 @@
+Carson’s Plotly workshop was a great experience!  The spectrum of material covered was very broad.  I was able to learn new concepts and also build on my knowledge with more advanced features.  The examples and lectures were very clear.  The interactive exercises after each section of the class are great opportunity to apply the material taught and utilize Carson’s knowledge with any question you may have.  The learning continued when I returned home with a great package of instructional and demo material that Carson provides.
+– Gene Wachtel, Software Applications Engineer. Pratt & Miller.
+
+Dr. Sievert is the expert on all things related to R and plotly. His workshop provided me with extensive and invaluable new skills that are required to be successful when creating data analytics in R. All data scientists, even the masters, could benefit from attending Carson's workshop.
+
+-- Dr. Andrew Kosydar. Sandia National Labs.
+
+Carson's Plotly course changed the way I think about visualizing data with R. His tools make interactive visualization across objects viable and his class provided me with the fundamentals to walk away feeling comfortable building interactive dashboards that I can put in front of clients. Further, he was able to help me understand the underlying mechanics so I can extend the concepts to other visualization libraries with the appropriate structures. His class was well organized, he does a great job presenting the material, and his knowledge and experience in the area of data visualization is humbling. I will definitely look for his classes in the future, thanks Carson for a great experience!
+
+-- Mark Druffel. Consultant at Propeller.
+
+Carson has done a great job bringing plotly to the R community. The workshop was great for both those newer to plotly and more advanced users who got to learn about the newer, cutting edge functionality that was available. There were lots of opportunities for hands-on examples, which was really helpful!
+
+-- Leigh Alexander, PhD. Scientist at SomaLogic.
+
+
+
