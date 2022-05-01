@@ -1,489 +1,702 @@
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
 
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="pandoc" />
+  <!-- Favicon 
+  <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+  -->
 
+  <!-- Inspired by LandKit https://landkit.goodthemes.co/index.html -->
 
+  <!-- Libs CSS -->
+  <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
 
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
 
-<title>Sievert Consulting - R, RStudio, shiny, plotly, data visualization consulting, training, instruction</title>
+  <title>
+  Sievert Consulting - Shiny, R, RStudio, Plotly, data visualization
+  </title>
+  <meta name="author" content="Carson Sievert">
+  <meta name="description" content="Sievert Consulting - R, RStudio, shiny, plotly, data visualization">
+  <meta name="keywords" content="r shiny,shiny apps,r shiny apps,shiny developer,r shiny developer,r,rstats,rstudio,statistics,machine learning,data visualization">
 
-<script src="index_files/jquery/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="index_files/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<script src="index_files/bootstrap/js/bootstrap.min.js"></script>
-<script src="index_files/bootstrap/shim/html5shiv.min.js"></script>
-<script src="index_files/bootstrap/shim/respond.min.js"></script>
-<script src="index_files/navigation/tabsets.js"></script>
-<meta charset="utf-8">
-<title>
-Sievert Consulting - R, RStudio, shiny, plotly, data visualization consulting
-</title>
-<meta name="author" content="Carson Sievert">
-<meta name="description" content="Sievert Consulting - R, RStudio, shiny, plotly, data visualization consulting, training, instruction">
-<meta name="keywords" content="r,rstats,rstudio,statistics,machine learning,data visualization,graphs,graphics,plotly,r plotly,r shiny,shiny apps,r shiny apps,shiny developer,r shiny developer">
+  <!--  open graph http://ogp.me/ -->
+  <meta property="description" content="Sievert Consulting - R, RStudio, shiny, plotly, data visualization consulting" >
+  <meta property="og:title" content="Sievert Consulting - R, RStudio, shiny, plotly, data visualization consulting" >
+  <meta property="og:type" content="website" >
 
-<!--  open graph http://ogp.me/ -->
-<meta property="description" content="Sievert Consulting - R, RStudio, shiny, plotly, data visualization consulting" >
-<meta property="og:title" content="Sievert Consulting - R, RStudio, shiny, plotly, data visualization consulting" >
-<meta property="og:type" content="website" >
+  <!-- Twitter summary cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@cpsievert" />
+  <meta name="twitter:creator" content="@cpsievert" />
+  <meta name="twitter:title" content="Carson Sievert - data science (R, RStudio, shiny, plotly, visualization) consultant" />
+  <meta name="twitter:image" content="http://consulting.cpsievert.me/img/carson.png" />
 
-<!-- Twitter summary cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@cpsievert" />
-<meta name="twitter:creator" content="@cpsievert" />
-<meta name="twitter:title" content="Carson Sievert - data science (R, RStudio, shiny, plotly, visualization) consultant" />
-<meta name="twitter:image" content="http://consulting.cpsievert.me/img/carson.png" />
+  <style>
+    /* .carousel-control-next {margin-right: -150px;} */
+    /* .carousel-control-prev {margin-left: -150px;} */
+  </style>
 
-
-
-
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
-
-<link rel="stylesheet" href="css/index.css" type="text/css" />
-<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-
+  <script defer src="https://player.vimeo.com/api/player.js"></script>
 </head>
 
 <body>
 
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
-img {
-  max-width:100%;
-  height: auto;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-</style>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
 
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">
+        Sievert Consulting
+      </a>
 
-
-<div class="container-fluid main-container">
-
-<!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
-
-<!-- code folding -->
-
-
-
-
-
-
-<div class="fluid-row" id="header">
-
-
-
-
-</div>
-
-
-
-
-<!--
-https://getbootstrap.com/components/#navbar
--->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-  
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-list" aria-expanded="false">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">SIEVERT CONSULTING</a>
-    </div>
 
-    <div class="collapse navbar-collapse" id="navbar-list">
-      <ul class="nav navbar-nav navbar-right"> 
-        <li><a href="#Services">Services</a></li>
-        <li><a href="#Training">Training</a></li>
-        <li><a href="#About">About</a></li>
-        <li><a href="#Contact">Contact</a></li>
-      </ul>
-    </div>
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
 
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          &#10006;
+        </button>
+
+        <!-- Navigation -->
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link"  href="#services" aria-expanded="false">
+              Services
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="#portfolio" aria-expanded="false">
+              Portfolio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="#about"  aria-expanded="false">
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="#contact" aria-expanded="false">
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        <!-- Button
+        <a class="navbar-btn btn btn-sm btn-primary lift ms-auto" href="" target="_blank">
+          Request consultation
+        </a>
+        -->
+
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- WELCOME -->
+  <section class="pt-4 pt-md-11">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-5 col-lg-6 order-md-2">
+
+          <!-- Image -->
+          <img src="img/landing-illustration.jpg" class="img-fluid mw-md-150 mw-lg-110 mb-6 mb-md-0" alt="..." data-aos="fade-up" data-aos-delay="100">
+
+        </div>
+        <div class="col-12 col-md-7 col-lg-6 order-md-1" data-aos="fade-up">
+
+          <!-- Heading -->
+          <h1 class="display-4 text-center text-md-start">
+            Turn data into value with a custom, reproducible, data-driven <span
+            data-typed='{"strings": ["website.", "Shiny app.", "pdf report.", "API."]}' class="text-primary"></span></span>
+          </h1>
+
+          <!-- Text -->
+          <p class="lead text-center text-md-start text-muted mb-6 mb-lg-6">
+            Our expertise in open source data science tooling (R, Python, and JavaScript) can help you create better data products, faster. 
+          </p>
+
+          <!-- Buttons -->
+          <div class="text-center text-md-start">
+            <a href="#contact" class="btn btn-primary shadow lift me-1">
+              Contact us <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 3px";>
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M5 6h14a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2zm13.144 1.84L12 11.148 5.856 7.84a.75.75 0 10-.712 1.32l6.5 3.5c.222.12.49.12.712 0l6.5-3.5a.75.75 0 00-.712-1.32z"
+                    fill="white"></path>
+                </g>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
+
+  <!-- FEATURES -->
+  <section class="py-8 py-md-8 border-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4" data-aos="fade-up">
+
+          <!-- Icon -->
+          <div class="mb-3">
+            <span class="icon text-primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <path d="M5 19h15a1 1 0 010 2H4a1 1 0 01-1-1V4a1 1 0 112 0v15z" fill="#335EEA"></path>
+                  <path
+                    d="M8.73 14.684a1 1 0 11-1.46-1.368l3.75-4a1 1 0 011.38-.077l2.959 2.526 3.856-4.885a1 1 0 011.57 1.24l-4.5 5.7a1 1 0 01-1.434.14l-3.024-2.58-3.097 3.304z"
+                    fill="#335EEA" opacity=".3"></path>
+                </g>
+              </svg>
+            </span>
+
+            <span class="icon text-primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <rect fill="#335EEA" opacity=".3" x="12" y="4" width="3" height="13" rx="1.5"></rect>
+                  <rect fill="#335EEA" opacity=".3" x="7" y="9" width="3" height="8" rx="1.5"></rect>
+                  <path d="M5 19h15a1 1 0 010 2H4a1 1 0 01-1-1V4a1 1 0 112 0v15z" fill="#335EEA"></path>
+                  <rect fill="#335EEA" opacity=".3" x="17" y="11" width="3" height="6" rx="1.5"></rect>
+                </g>
+              </svg>
+            </span>
+
+          </div>
+          
+
+          <!-- Heading -->
+          <h3>
+            Analytical website development
+          </h3>
+
+          <!-- Text -->
+          <p class="text-muted mb-6 mb-md-0">
+            We've helped to <a href="https://github.com/cpsievert">develop</a> some of the most widely used software in this domain (e.g., <a href="https://shiny.rstudio.com">Shiny</a> 
+            and <a href="https://plotly-r.com">Plotly</a>), so we can answer your toughest questions about these tools and/or use them to deliver awesome analytical websites.
+          </p>
+
+        </div>
+        <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="50">
+
+          <!-- Icon -->
+          <div class="mb-3">
+            <span class="icon text-primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <path d="M11 20v-3a1 1 0 012 0v3h2.5a.5.5 0 110 1h-7a.5.5 0 110-1H11z" fill="#335EEA" opacity=".3"></path>
+                  <path
+                    d="M3 5h18a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1.5 3a.5.5 0 000 1h9a.5.5 0 100-1h-9zm0 2a.5.5 0 100 1h3a.5.5 0 100-1h-3z"
+                    fill="#335EEA"></path>
+                </g>
+              </svg>
+            </span>
+            
+
+            <span class="icon text-primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <rect fill="#335EEA" opacity=".3" x="6" y="5" width="12" height="18" rx="6"></rect>
+                  <path d="M11.5 2h1a.5.5 0 01.5.5V5h-2V2.5a.5.5 0 01.5-.5z" fill="#335EEA"></path>
+                  <rect fill="#335EEA" x="11" y="16" width="2" height="5" rx="1"></rect>
+                </g>
+              </svg>
+            </span>
+          </div>
+          
+          
+          <!-- Heading -->
+          <h3>
+            Automate menial tasks
+          </h3>
+
+          <!-- Text -->
+          <p class="text-muted mb-6 mb-md-0">
+            Never copy/paste from Excel to Adobe again. We'll automate PDF/HTML reporting (as well as data cleaning, transformation, and modeling) using free and open source code.
+          </p>
+
+        </div>
+        <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="100">
+
+          <!-- Icon -->
+          <div class="mb-3">
+            <span class="icon text-primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M17.272 8.685a1 1 0 111.456-1.37l4 4.25a1 1 0 010 1.37l-4 4.25a1 1 0 01-1.456-1.37l3.355-3.565-3.355-3.565zm-10.544 0L3.373 12.25l3.355 3.565a1 1 0 01-1.456 1.37l-4-4.25a1 1 0 010-1.37l4-4.25a1 1 0 011.456 1.37z"
+                    fill="#335EEA"></path>
+                  <rect fill="#335EEA" opacity=".3" transform="rotate(15 12 12)" x="11" y="4" width="2" height="16" rx="1"></rect>
+                </g>
+              </svg>
+            </span>
+            <span class="icon text-primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M5 2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V4a2 2 0 012-2zm6 2a1 1 0 000 2h5a1 1 0 000-2h-5zM7 6a1 1 0 100-2 1 1 0 000 2z"
+                    fill="#335EEA" opacity=".3"></path>
+                  <path
+                    d="M5 9h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a2 2 0 012-2zm6 2a1 1 0 000 2h5a1 1 0 000-2h-5zm-4 2a1 1 0 100-2 1 1 0 000 2zM5 16h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a2 2 0 012-2zm6 2a1 1 0 000 2h5a1 1 0 000-2h-5zm-4 2a1 1 0 100-2 1 1 0 000 2z"
+                    fill="#335EEA"></path>
+                </g>
+              </svg>
+            </span>
+          </div>
+          
+          <!-- Heading -->
+          <h3>
+            Reproduce, scale, and extend
+          </h3>
+
+          <!-- Text -->
+          <p class="text-muted mb-0">
+            We work closely with clients and apply our software engineering expertise to ensure the code we deliver is easy to understand, maintain, scale, and adapt to future needs.
+          </p>
+
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
+
+  <!-- BRANDS -->
+  <section class="py-6 py-md-8 border-bottom">
+    <div class="container" id="clients">
+      <div class="row align-items-center justify-content-center" style="filter: grayscale(100%); opacity: 0.8">
+        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0">
+          <div class="img-fluid text-gray-600 mb-2 mb-md-0">
+            <img src="img/rstudio.svg" style="max-height:100px">
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0">
+          <div class="img-fluid text-gray-600 mb-2 mb-md-0">
+            <img src="img/cslbehring.svg" style="max-height:100px">
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0">
+          <div class="img-fluid text-gray-600 mb-2 mb-md-0">
+            <img src="img/sandia.svg" style="max-height:100px">
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0">
+          <div class="img-fluid text-gray-600 mb-2 mb-md-0">
+            <img src="img/genentech.svg" style="max-height:100px">
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0">
+          <div class="img-fluid text-gray-600 mb-2 mb-md-0">
+            <img src="img/loc.svg" style="max-height:100px; transform: scale(120%)">
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0">
+          <div class="img-fluid text-gray-600 mb-2 mb-md-0">
+            <img src="img/cmu.svg" style="max-height:100px">
+          </div>
+        </div>
+        <!--
+        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0">
+          <div class="img-fluid text-gray-600 mb-2 mb-md-0">
+            <img src="img/plotly.svg" style="max-height:100px">
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0">
+          <div class="img-fluid text-gray-600 mb-2 mb-md-0">
+            <img src="img/noaa.jpg" style="max-height:100px">
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0">
+          <div class="img-fluid text-gray-600 mb-2 mb-md-0">
+            <img src="img/unc.svg" style="max-height:100px; transform: scale(150%)">
+          </div>
+        </div>
+        -->
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
+
+  <!-- ABOUT -->
+  <section class="pt-8 pt-md-11 bg-gradient-light-white" id="services">
+    <div class="container" style="max-width: 90%">
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-5" data-aos="fade-right">
+
+          <!-- Heading -->
+          <h2>
+            We have lots of experience <br>
+            <span class="text-primary">developing analytical websites</span>.
+          </h2>
+
+          <!-- Text -->
+          <p class="fs-lg text-muted mb-6">
+            We've designed, developed, and shipped dozens of <a href="https://shiny.rstudio.com/">Shiny apps</a> as well as pure HTML+JavaScript websites that make data more accessible, informative, and beautiful.
+          </p>
+
+
+          <!-- List -->
+          <div class="d-flex">
+
+            <!-- Icon -->
+            <div class="icon text-primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <rect fill="#335EEA" opacity=".3" x="6" y="5" width="12" height="18" rx="6"></rect>
+                  <path d="M11.5 2h1a.5.5 0 01.5.5V5h-2V2.5a.5.5 0 01.5-.5z" fill="#335EEA"></path>
+                  <rect fill="#335EEA" x="11" y="16" width="2" height="5" rx="1"></rect>
+                </g>
+              </svg>
+            </div>
+
+            <div class="ms-5">
+
+              <!-- Heading -->
+              <h4 class="mb-1">
+                Gain new perspectives
+              </h4>
+
+              <!-- Text -->
+              <p class="text-muted mb-6">
+                Our expertise lies in surfacing multi-dimensional relationships through interactive dataviz techniques such as animation, highlighting, and filtering across multiple linked views.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- List -->
+          <div class="d-flex">
+
+            <!-- Icon -->
+            <div class="icon text-primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z" />
+                  <path
+                    d="M12 8H8a4 4 0 00-4 4v1a3 3 0 003 3v2a5 5 0 01-5-5v-1a6 6 0 016-6h4V4.728a.5.5 0 01.8-.4l2.856 2.133a.5.5 0 01-.001.802l-2.857 2.121A.5.5 0 0112 8.983V8z"
+                    fill="#335EEA" />
+                  <path
+                    d="M12.058 16H16a4 4 0 004-4v-1a3 3 0 00-3-3V6a5 5 0 015 5v1a6 6 0 01-6 6h-3.942v.983a.5.5 0 01-.798.401l-2.857-2.12a.5.5 0 010-.803l2.856-2.134a.5.5 0 01.8.401V16z"
+                    fill="#335EEA" opacity=".3" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="ms-5">
+
+              <!-- Heading -->
+              <h4 class="mb-1">
+                Faster prototyping
+              </h4>
+
+              <!-- Text -->
+              <p class="text-muted mb-6">
+                We take pride in our ability to rapidly produce sophisticated deliverables with R, Shiny, and Plotly (so much so that <a href="https://plotly-r.com/">we wrote a book on it</a>).
+              </p>
+
+            </div>
+
+          </div>
+          <div class="d-flex">
+
+            <!-- Icon -->
+            <div class="icon text-primary">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M5 2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V4a2 2 0 012-2zm6 2a1 1 0 000 2h5a1 1 0 000-2h-5zM7 6a1 1 0 100-2 1 1 0 000 2z"
+                    fill="#335EEA" opacity=".3"></path>
+                  <path
+                    d="M5 9h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a2 2 0 012-2zm6 2a1 1 0 000 2h5a1 1 0 000-2h-5zm-4 2a1 1 0 100-2 1 1 0 000 2zM5 16h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a2 2 0 012-2zm6 2a1 1 0 000 2h5a1 1 0 000-2h-5zm-4 2a1 1 0 100-2 1 1 0 000 2z"
+                    fill="#335EEA"></path>
+                </g>
+              </svg>
+            </div>
+
+            <div class="ms-5">
+
+              <!-- Heading -->
+              <h4 class="mb-1">
+                Hosting tailored to your needs
+              </h4>
+
+              <!-- Text -->
+              <p class="text-muted mb-6 mb-md-0">
+                We'll work together to find the right solution for hosting the final website. Whether that means hosting it for you, working with IT to stand up server infrastructure, educating you on solutions provided by other vendors, or even implementing the website in pure HTML+JavaScript (for easy hosting), we'll do whatever makes sense for your needs.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+        <div class="col-12 col-lg-7">
+
+          <div class="w-100 position-relative" data-aos="fade-left">
+
+            <!-- Image -->
+            <div class="img-skewed img-skewed-start">
+
+              <!-- Image -->
+              <img src="img/como.gif" class="screenshot img-fluid img-skewed-item" style="transform: rotateY(-25deg) rotateX(9deg)"  alt="Higlighting and filter across multiple linked views">
+
+            </div>
+
+          </div>
+
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
+
+  <!-- SHAPE -->
+  <div class="position-relative mt-13">
+    <div class="shape shape-bottom shape-fluid-x text-gray-200">
+      <svg viewBox="0 0 2880 480" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"></path></svg>      </div>
   </div>
-</nav>
 
-<div id="Breathing life into data" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
-<h1>Breathing life into data</h1>
-<h3>At Sievert Consulting, we turn data into insight. Our passion is data visualization, but we offer many services surrounding the practice and dissemination of data science.</h3>
-</div>
-<div id="carousel-o-graphics" class="carousel slide" data-ride="carousel" data-interval="false">
-<div class="carousel-inner" role="listbox">
-<div class="item active">
-<img src="img/storms.gif" class="img-responsive center-block"/>
-<div class="carousel-caption">
-<h3>Exploring 3D and 2D views of tropical storm paths.</h3>
-<p></p>
-</div>
-</div>
-<div class="item">
-<img src="img/zikar-colombia.gif" class="img-responsive center-block"/>
-<div class="carousel-caption">
-<h3>Comparing overall frequency of Zika virus cases (black) versus frequency within the map (red).</h3>
-<p></p>
-</div>
-</div>
-<div class="item">
-<img src="img/bcviz.gif" class="img-responsive center-block"/>
-<div class="carousel-caption">
-<h3>Visualizing multiple time series of housing transactions in British Columbia. See <a href='https://vimeo.com/207379729'>here</a> for a full video</h3>
-<p></p>
-</div>
-</div>
-<div class="item">
-<img src="img/quakes.gif" class="img-responsive center-block"/>
-<div class="carousel-caption">
-<h3>Exploring relationship between earthquake magnitude and geographic location</h3>
-<p></p>
-</div>
-</div>
-<div class="item">
-<img src="img/tour.gif" class="img-responsive center-block"/>
-<div class="carousel-caption">
-<h3>Choosing 3 groups of 'similar' US states (via Euclidean distance of arrest data). The rotating graph (aka, a grand tour) cycles through 2D projections of the data -- allowing us to assess how the clustering appears from many different perspectives.</h3>
-<p></p>
-</div>
-</div>
-</div>
-<a class="left carousel-control" href="#carousel-o-graphics" role="button" data-slide="prev">
-<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-<span class="sr-only">Previous</span>
-</a>
-<a class="right carousel-control" href="#carousel-o-graphics" role="button" data-slide="next">
-<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-<span class="sr-only">Next</span>
-</a>
-</div>
-<hr/>
-<br/>
-<div id="Services" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
-<h1>Services</h1>
-<h3>We deliver data-driven products &amp; insights faster than the competition thanks to our background in visualization, analytics, and software development.</h3>
-</div>
-<br/>
-<div style="max-width: 700px; margin: auto">
-<div id="service-box" style="display: flex; flex-wrap: wrap; justify-content: center;">
-<div>
-<div style="display: inline">
-<i class="fa fa-line-chart fa-fw fa-3x" aria-hidden="true"></i>
-<i class="fa fa-bar-chart fa-fw fa-3x" aria-hidden="true"></i>
-<i class="fa fa-mouse-pointer fa-fw fa-3x" aria-hidden="true"></i>
-</div>
-<h4>Interactive websites that support data analysis tasks</h4>
-</div>
-<div>
-<div style="display: inline">
-<i class="fa fa-server fa-fw fa-3x" aria-hidden="true"></i>
-<i class="fa fa-desktop fa-fw fa-3x" aria-hidden="true"></i>
-</div>
-<h4>
-<a href="https://shiny.rstudio.com/" target="_blank">Shiny</a>
- app development, deployment, management, and support
-</h4>
-</div>
-<div>
-<div style="display: inline">
-<i class="fa fa-terminal fa-fw fa-3x" aria-hidden="true"></i>
-<i class="fa fa-user fa-fw fa-3x" aria-hidden="true"></i>
-<i class="fa fa-graduation-cap fa-fw fa-3x" aria-hidden="true"></i>
-</div>
-<h4>
-Programming support and 
-<a href="#training">training</a>
-</h4>
-</div>
-<div>
-<div style="display: inline">
-<i class="fa fa-question-circle fa-fw fa-3x" aria-hidden="true"></i>
-<i class="fa fa-info-circle fa-fw fa-3x" aria-hidden="true"></i>
-</div>
-<h4>Statistical consulting</h4>
-</div>
-<div>
-<div style="display: inline">
-<i class="fa fa-file-code-o fa-fw fa-3x" aria-hidden="true"></i>
-<i class="fa fa-html5 fa-fw fa-3x" aria-hidden="true"></i>
-<i class="fa fa-file-pdf-o fa-fw fa-3x" aria-hidden="true"></i>
-<i class="fa fa-file-word-o fa-fw fa-3x" aria-hidden="true"></i>
-</div>
-<h4>Dynamic &amp; reproducible reporting of analytical results</h4>
-</div>
-<div>
-<div style="display: inline">
-<i class="fa fa-database fa-fw fa-3x" aria-hidden="true"></i>
-<i class="fa fa-table fa-fw fa-3x" aria-hidden="true"></i>
-</div>
-<h4>Data acquistion, cleaning, management</h4>
-</div>
-<a href="https://carsonsievert.typeform.com/to/FGtIgd" target="_blank">
-<button type="button" class="btn btn-secondary btn-lg">
-<i class="fa fa-paper-plane-o fa-fw fa-2x" aria-hidden="true"></i>
-<h4>Request a consultation</h4>
-</button>
-</a>
-</div>
-</div>
-<br/>
-<hr/>
-<br/>
-<div id="Clients" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
-<h1>Clients</h1>
-<h3>Our clients include: startups, government, universities, and corporations</h3>
-</div>
-<div style="background-color:#f6f6f6;">
-<div style="max-width: 700px; margin: auto">
-<div id="clients" style="display: flex; flex-wrap: wrap; justify-content: center;">
-<div style="padding: 1em">
-<a href="https://plot.ly/r/" target="_blank" title="Plotly">
-<img src="/img/plotly.png"/>
-</a>
-</div>
-<div style="padding: 1em">
-<a href="http://www.noaa.gov/" target="_blank" title="NOAA">
-<img src="/img/noaa.png"/>
-</a>
-</div>
-<div style="padding: 1em">
-<a href="http://www.sandia.gov/" target="_blank" title="Sandia Labs">
-<img src="/img/sandia.png"/>
-</a>
-</div>
-<div style="padding: 1em">
-<a href="http://www.oreilly.com/pub/au/7341" target="_blank" title="O&#39;Reilly Media">
-<img src="/img/oreilly.png"/>
-</a>
-</div>
-<div style="padding: 1em">
-<a href="https://www.cmu.edu/" target="_blank" title="Carnegie Mellon">
-<img src="/img/cmu.png"/>
-</a>
-</div>
-<div style="padding: 1em">
-<a href="http://www.uga.edu/" target="_blank" title="University of Georgia">
-<img src="/img/uga.png"/>
-</a>
-</div>
-<div style="padding: 1em">
-<a href="http://www.bcstats.gov.bc.ca/" target="_blank" title="BC Stats (BC Government)">
-<img src="/img/bcstats.png"/>
-</a>
-</div>
-<div style="padding: 1em">
-<a href="https://www.robustwealth.com/" target="_blank" title="RobustWealth">
-<img src="/img/robustwealth.png"/>
-</a>
-</div>
-</div>
-</div>
-</div>
-<br/>
-<div id="Training" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
-<h1>Training</h1>
-<h3>
-<p>
-<a href="#about">Carson</a>
-is a
-<a href="https://www.rstudio.com/instructors/">trusted RStudio trainer</a>
-with over 5 years experience teaching university courses and running interactive 
-<a href="https://workshops.cpsievert.me">workshops</a>
-. Sign up for his next PLOTCON workshop below,
-<a href="https://carsonsievert.typeform.com/to/FKUSbW">request an on-site training</a>
-, and 
-<a href="https://blog.cpsievert.me/2017/12/04/components-of-a-successful-r-workshop/">read about</a>
-his teaching philosophy.
-</p>
-</h3>
-</div>
-<br/>
-<div align="center">
-<iframe src="https://plotcon.plot.ly/r-shiny-dash-r/" height="600" width="60%" seamless="seamless" frameBorder="0"></iframe>
-</div>
-<br/>
-<div id="Praise" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
-<h1>Praise</h1>
-<h3>Feedback from clients and workshop attendees</h3>
-</div>
-<div id="carousel-o-praise" class="carousel slide" data-ride="carousel">
-<div class="carousel-inner" role="listbox">
-<div class="item active">
-<img src="praise/leigh-alexander.svg" class="img-responsive center-block"/>
-</div>
-<div class="item">
-<img src="praise/andrew-kosydar.svg" class="img-responsive center-block"/>
-</div>
-<div class="item">
-<img src="praise/mark-druffel.svg" class="img-responsive center-block"/>
-</div>
-<div class="item">
-<img src="praise/roy-mendelssohn.svg" class="img-responsive center-block"/>
-</div>
-</div>
-<a class="left carousel-control" href="#carousel-o-praise" role="button" data-slide="prev">
-<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-<span class="sr-only">Previous</span>
-</a>
-<a class="right carousel-control" href="#carousel-o-praise" role="button" data-slide="next">
-<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-<span class="sr-only">Next</span>
-</a>
-</div>
-<br/>
-<div id="About" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
-<h1>About</h1>
-</div>
-<div style="max-width:700px; margin: auto">
-<div id="about-box" style="display: flex; flex-wrap: wrap; justify-content: center;">
-<div id="about-pic">
-<a href="https://cpsievert.me/" target="_blank">
-<img src="img/carson.png"/>
-</a>
-</div>
-<div id="about-txt">
-<h3 style="text-align: left">Carson Sievert, PhD. Founder and Principal Consultant</h3>
-<h4><p><a href="https://cpsievert.me">Carson</a> enjoys developing software and creating products that make data analysis more accessible and less boring. He is most well-known as the maintainer of <a href="https://github.com/ropensci/plotly/graphs/contributors">plotly</a> &ndash; the most widely used R package for creating interactive web graphics. Shortly after receiving a <a href="https://search.proquest.com/openview/3a91971f82fd4af20a78bebb079f5035/">PhD in statistics</a>, his contributions to plotly were recognized by the <a href="http://www.amstat.org/">ASA</a> with the <a href="http://stat-computing.org/awards/jmc/">Chambers Award</a>. 
-In addition to a formal background in math and statistics, Carson has over 7 years experience using and developing data science software &ndash; allowing him to attack challenging problems with domain expertise from many different areas. Whether it&#39;s a novel visualization for better model interpretation (<a href="https://github.com/cpsievert/LDAvis">LDAvis</a>), or a customized (shiny) web-application for exploring multiple datasets (e.g., <a href="https://github.com/cpsievert/zikar">zikar</a>, <a href="https://github.com/cpsievert/pedestrians">pedestrians</a>, <a href="https://github.com/ropenscilabs/eechidna/">eechidna</a>, <a href="https://github.com/cpsievert/bcviz">bcviz</a>); Carson pushes the frontier of R and JavaScript to help (himself and others) derive insight from data in a reusable, portable, reproducible, and accessible way.</p>
-</h4>
-</div>
-</div>
-</div>
-<div id="Contact" class="tagline" align="center" style="display: block; max-width: 700px; margin: auto">
-<h1>Contact</h1>
-</div>
-<div id="contact-buttons" style="display: flex; flex-wrap: wrap; justify-content: center;">
-<div style="padding: 1em">
-<a href="https://carsonsievert.typeform.com/to/FGtIgd" target="_blank">
-<button type="button" class="btn btn-secondary btn-lg">
-<i class="fa fa-envelope fa-fw fa-2x" aria-hidden="true"></i>
-<h4>Drop us a note</h4>
-</button>
-</a>
-</div>
-<div style="padding: 1em">
-<a href="https://calendly.com/cpsievert/meeting" target="_blank">
-<button type="button" class="btn btn-secondary btn-lg">
-<i class="fa fa-calendar fa-fw fa-2x" aria-hidden="true"></i>
-<h4>Schedule a meeting</h4>
-</button>
-</a>
-</div>
-</div>
-<br/>
-<br/>
-<hr/>
-<!--
-Flip carousel after the initial graphic has had time to play twice
-https://stackoverflow.com/questions/14524297/how-to-scroll-to-div-after-click-on-about-or-contact-in-my-menu
--->
-<script type="text/javascript">
-setTimeout(function() {
-  $('#carousel-o-graphics').carousel('next')
-}, 27000)
+  
+  <section class="py-10 py-md-12 bg-gray-200" id="portfolio">
+    <div class="container" style="max-width: 100%">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 text-center">
 
-$('ul.nav').find('a').click(function(){
-    var href = $(this).attr('href');
-    $('html, body').animate({ scrollTop: $(href).offset().top }, 2000);
-});
-</script>
-<footer>
-<div style="max-width: 700px; height:75px; margin: auto">
-<div style="display:inline-block; margin:auto">
-<a href="https://github.com/cpsievert/consulting" target="_blank">Copyright 2017 Sievert Consulting</a>
-</div>
-<div style="display:inline-block; float:right; margin:auto">
-<div style="display: inline">
-<a href="mailto:cpsievert1@gmail.com" target="_blank">
-<i class="fa fa-envelope-o fa-fw fa-3x" aria-hidden="true"></i>
-</a>
-</div>
-<div style="display: inline">
-<a href="https://twitter.com/cpsievert" target="_blank">
-<i class="fa fa-twitter fa-fw fa-3x" aria-hidden="true"></i>
-</a>
-</div>
-<div style="display: inline">
-<a href="https://github.com/cpsievert" target="_blank">
-<i class="fa fa-github fa-fw fa-3x" aria-hidden="true"></i>
-</a>
-</div>
-<div style="display: inline">
-<a href="https://vimeo.com/cpsievert" target="_blank">
-<i class="fa fa-vimeo fa-fw fa-3x" aria-hidden="true"></i>
-</a>
-</div>
-</div>
-</div>
-</footer>
+          <!-- Heading -->
+          <h2 data-aos="fade-down" data-aos-delay="100">
+            Some of our favorite work
+          </h2>
+
+          <!-- Text -->
+          <p class="fs-lg text-muted mb-7 mb-md-9" data-aos="fade-right" data-aos-delay="100">
+            We love working with domain experts to bring their ideas to life.
+          </p>
+
+        </div>
+      </div> <!-- / .row -->
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-12">
+
+          <div id="carouselExampleCaptions" class="carousel carousel-dark carousel-fade slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div style="padding:38.44% 0 0 0;position:relative;"><iframe
+                    src="https://player.vimeo.com/video/385818046?loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
+                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                </div>
+                
+                <div class="carousel-caption d-none d-md-block text-dark"></div>
+              </div>
+              <div class="carousel-item">
+                <div style="padding:38.44% 0 0 0;position:relative;"><iframe
+                    src="https://player.vimeo.com/video/328770954?loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
+                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                </div>
+                <div class="carousel-caption d-none d-md-block"></div>
+              </div>
+              <div class="carousel-item">
+                <div style="padding:38.44% 0 0 0;position:relative;"><iframe
+                    src="https://player.vimeo.com/video/353646796?loop=1&autoplay=1&autopause=0&muted=1&title=0&byline=0&portrait=0"
+                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                </div>
+                <div class="carousel-caption d-none d-md-block"></div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+        </div>
+        
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
+
+  <div class="position-relative">
+  <div class="shape shape-bottom shape-fluid-x text-dark">
+  <svg viewBox="0 0 2880 56" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M720 28H0v28h2880V28h-720S1874 0 1440 0 720 28 720 28z" fill="currentColor"></path></svg>                      
+  </div>
+  </div>
 
 
+  <!-- About -->
+  <section class="py-12 bg-dark text-light" id="about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12">
+
+          <!-- Heading -->
+          <h2 class="display-2 text-center" data-aos="fade-down" data-aos-delay="100">
+            About us
+          </h2>
+
+          <div class="card bg-dark pt-6 mb-3">
+            <div class="row g-0">
+              <div class="col-md-4" data-aos="fade-right" data-aos-delay="100">
+                <img src="img/carson.png" class="img-fluid rounded-start" alt="A headshot of Carson">
+              </div>
+              <div class="col-md-8" data-aos="fade-left" data-aos-delay="100">
+                <div class="card-body">
+                  <h5 class="card-title display-4">Carson Sievert, PhD. Founder and Principal Consultant</h5>
+                  <p class="card-text lead">
+                    Carson brings more than a decade of experience in consulting, data science, and software engineering. 
+                    He began consulting during his <a href="https://www.proquest.com/openview/3a91971f82fd4af20a78bebb079f5035/" class="text-success">PhD in statistics</a>, 
+                    where he became the sole maintainer of the <a href="https://github.com/plotly/plotly.R" class="text-success">Plotly R package</a>, 
+                    and won awards for his contributions to statistical software.
+                    After graduating, he continued consulting, wrote <a href="https://plotly-r.com/" class="text-success">a book</a> 
+                    on interactive web graphics, and worked as an engineer on the
+                     <a href="https://shiny.rstudio.com/" class="text-success">Shiny team</a> at <a href="https://www.rstudio.com" class="text-success">RStudio</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
+
+  <!-- SHAPE -->
+  <div class="position-relative">
+    <div class="shape shape-bottom shape-fluid-x text-gray-200">
+      <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor" />
+      </svg>
+    </div>
+  </div>
 
 
-</div>
+  <!-- Contact -->
+  <section class="pt-12 bg-gray-200" id="contact">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12">
 
-<script>
+          <!-- Heading -->
+          <h2 class="display-3 text-center" data-aos="fade-down" data-aos-delay="100">
+            Drop us a line
+          </h2>
 
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
+          <form action="https://formspree.io/cpsievert1@gmail.com" method="POST" class="pt-7 w-75" data-aos="fade-up" data-aos-delay="100" style="margin-left:auto; margin-right:auto">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="form-name" placeholder="Name" id required/>
+              <label for="form-name">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="form-email" placeholder="Email" required/>
+              <label for="form-email">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" id="form-message" placeholder="Message" rows="6" required style="height: 12rem"></textarea>
+              <label for="form-message">Message</label>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
 
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
 
-</script>
+  <!-- FOOTER -->
+  <footer class="py-8 bg-gray-200">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 col-lg-3">
 
+          <!-- Brand -->
+          <a class="navbar-brand" href="#">Sievert Consulting</a>
+
+          <!-- Text -->
+          <p class="text-gray-700 mb-2">
+            Turning data into value
+          </p>
+
+          <!-- Social -->
+          <ul class="list-unstyled list-inline mb-6 mb-md-0">
+            <li class="list-inline-item list-social-item me-3">
+              <a href="https://twitter.com/cpsievert" class="text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                </svg>
+              </a>
+            </li>
+            <li class="list-inline-item list-social-item me-3">
+              <a href="https://github.com/cpsievert" class="text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+              </a>
+            </li>
+            <li class="list-inline-item list-social-item me-3">
+              <a href="https://www.linkedin.com/in/carsonsievert/" class="text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                </svg>
+              </a>
+            </li>
+            <li class="list-inline-item list-social-item me-3">
+              <a href="https://vimeo.com/cpsievert" class="text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vimeo" viewBox="0 0 16 16">
+                  <path d="M15.992 4.204c-.071 1.556-1.158 3.687-3.262 6.393-2.175 2.829-4.016 4.243-5.522 4.243-.933 0-1.722-.861-2.367-2.583L3.55 7.523C3.07 5.8 2.556 4.94 2.007 4.94c-.118 0-.537.253-1.254.754L0 4.724a209.56 209.56 0 0 0 2.334-2.081c1.054-.91 1.845-1.388 2.373-1.437 1.243-.123 2.01.728 2.298 2.553.31 1.968.526 3.19.646 3.666.36 1.631.756 2.446 1.186 2.445.334 0 .836-.53 1.508-1.587.671-1.058 1.03-1.863 1.077-2.415.096-.913-.263-1.37-1.077-1.37a3.022 3.022 0 0 0-1.185.261c.789-2.573 2.291-3.825 4.508-3.756 1.644.05 2.419 1.117 2.324 3.2z"/>
+                </svg>
+              </a>
+            </li>
+            <li class="list-inline-item list-social-item me-3">
+              <a href="mailto:cpsievert1@gmail.com" class="text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <!-- Vendor JS -->
+  <script src="./assets/js/vendor.bundle.js"></script>
+
+  <!-- Theme JS -->
+  <script src="./assets/js/theme.bundle.js"></script>
 
 </body>
+
 </html>
